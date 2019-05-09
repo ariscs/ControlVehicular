@@ -1,7 +1,7 @@
 <?php
 
 function Conectar (){
-    $Parametros = parse_ini_file("configuracion.ini");
+    $Parametros = parse_ini_file("../config/config.ini");
     $ServerName = $Parametros['Server'];
     $User = $Parametros['UserName'];
     $Password = $Parametros['Password'];
