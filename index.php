@@ -13,17 +13,23 @@
 <?php
 
 if(isset($_GET['view'])){
-    echo("Si sirve");
     switch($_GET['view']){
-        case "inicio":
-            echo("Chi chenol");
+        case "login":
+            include("templates/views/login.html");
+            break;
+        case "close":
+            header("Location:functions/close.php");
+            break;
+        case "error":
+            include('templates/views/error.html');
             break;
         default:
+            header("Location:index.php?view=".urlencode("error"));        
             break;
     }
 }else{
     $_GET['view'] = "inicio";
-    header("Location:index.php?view=".urlencode("inicio"));
+    header("Location:index.php?view=".urlencode("login"));
 }
 
 ?>
