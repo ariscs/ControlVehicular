@@ -11,7 +11,7 @@ function Conectar (){
 }
 
 function EjecutarConsulta($Con, $SQL){
-    $Query = mysqli_query($Con, $SQL) or mysqli_error();
+    $Query = mysqli_query($Con, $SQL);
     return $Query;
 }
 

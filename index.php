@@ -23,6 +23,9 @@ if(isset($_GET['view'])){
         case "error":
             include('templates/views/error.html');
             break;
+        case "block":
+            include('templates/views/block.html');
+            break;
         default:
             header("Location:index.php?view=".urlencode("error"));        
             break;
