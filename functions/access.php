@@ -24,7 +24,8 @@ if($n == 0){
 			$_SESSION['username'] = $user;
 			$_SESSION['val'] = TRUE;
 			$_SESSION['time'] = time();
-			//header("Location:MenuPrincipal.php");
+			header("Location:../index.php?view=".urlencode("menu"));
+
 		}else{
 			//Contrasena incorrecta
 			$i = $fila[3]+1;
