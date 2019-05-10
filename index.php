@@ -27,7 +27,7 @@ if(isset($_GET['view'])){
             include('templates/views/block.html');
             break;
         case "menu":
-            include('templates/views/menu.php');
+            require_once('functions/menu.php');
             break;
         default:
             header("Location:index.php?view=".urlencode("error"));        

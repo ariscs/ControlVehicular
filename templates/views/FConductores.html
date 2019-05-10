@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Conductores</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="PConductores.php">
+  <p>Conductores</p>
+  <p>
+    <label>CURP
+    <input name="CURP" type="text" id="CURP" value="" maxlength="18" minlength="18"/>
+    </label>
+  </p>
+  <p>
+    <label>Nombre
+    <input name="nombre" type="text" id="nombre" required/>
+    </label>
+  </p>
+  <p>
+    <label>Domicilio
+    <input name="domicilio" type="text" id="domicilio" required/>
+    </label>
+  </p>
+  <p>
+    <label>Firma</label>
+    <input type="file" name="archivo" id="archivo"/>
+  </p>
+  <p>
+    <label>Grupo Sanguineo
+    <select name="grupo" id="grupo">
+      <option value="O+">O+</option>
+      <option value="O-">O-</option>
+      <option value="A+">A+</option>
+      <option value="A-">A-</option>
+      <option value="B+">B+</option>
+      <option value="B-">B-</option>
+      <option value="AB+">AB+</option>
+      <option value="AB-">AB-</option>
+    </select>
+    </label>
+  </p>
+  <p>
+    <label>Restricciones
+    <input name="restricciones" type="text" id="restricciones" />
+    </label>
+  </p>
+  <p>
+    <label>Telefono de Emergencia
+    <input name="tel" type="text" id="tel" />
+    </label>
+  </p>
+  <p>
+    <label>Fecha de Nacimiento
+    <input name="fecha" type="date" id="fecha" />
+    </label>
+  </p>
+  <p>
+    <label>
+    <input type="checkbox" name="donante" value="1" checked="checked" />
+    Donador</label>
+    <br />
+  </p>
+  <p>
+    <label>
+    <input type="submit" name="Submit" value="Submit" />
+    </label>
+  </p>
+</form>
+</body>
+</html>
