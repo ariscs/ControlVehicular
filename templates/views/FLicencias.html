@@ -1,0 +1,48 @@
+<div class="form">
+  <form id="form1" name="form1" method="post" action="templates/forms/PLicencias.php">
+    <label>ID Licencia
+      <input name="idLicencia" type="number" disabled="disabled" id="idLicencia" value="0"/>
+    </label>
+    <p>
+      <label>Conductor
+        <input name="conductor" type="text" id="conductor" required/>
+      </label>
+    </p>
+    <p>
+      <label>Fecha de expedición
+        <input type="date" name="fExpedicion" required/>
+      </label><label></label>
+    </p>
+    <p>
+      <label>Tipo
+        <select name="tipo" id="tipo">
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+          <option value="E">E</option>
+        </select>
+      </label>
+    </p>
+    <p>
+      <label>Fecha de vencimiento
+        <input name="fVencimiento" type="date" id="fVencimiento" required/>
+      </label>
+    </p>
+    <p>
+      <label>Lugar
+        <input name="lugar" type="text" id="lugar" required/>
+      </label>
+    </p>
+    <p>
+      <label>Expide
+        <input name="expide" type="text" id="expide" required/>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input type="submit" name="Submit" value="Submit" />
+      </label>
+    </p>
+  </form>
+</div>
