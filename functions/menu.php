@@ -25,6 +25,14 @@ if($_SESSION['val']){
                 require_once('templates/forms/PTenencia.php');
                 include('templates/views/FTenencia.html');
                 break;
+            case "fverificacion":
+                require_once('templates/forms/PVerificacion.php');
+                include('templates/views/FVerificacion.html');
+                break;
+            case "fmultas":
+                require_once('templates/forms/PMultas.php');
+                include('templates/views/FMultas.html');
+                break;
             default:   
                 break;
         }
