@@ -1,4 +1,7 @@
-<?php 
+<?php
+
+include('functions/rcon.php');
+if(isset($_POST['Submit'])){
 	$CURP= $_POST['CURP'];
 	$Nombre= $_POST['nombre'];
 	$Domicilio= $_POST['domicilio'];
@@ -37,7 +40,6 @@
 	print("Tel de emergencia: ".$TelE. "<br>");
 	print("Fecha de nacimiento: ".$FechaN. "<br>");
 
-	include("conexion.php");
     $Con = Conectar();
 	$SQL = "INSERT INTO conductores VALUES ('$CURP', '$Nombre', '$Domicilio', '$location2', '$GrupoS', '$Restricciones', '$TelE', '$FechaN','$Donante');";
 	EjecutarConsulta($Con,$SQL);
@@ -70,4 +72,6 @@
 	
 		$conductores->asXML('XML/Conductores.xml');
 	}
+}
+
 ?>

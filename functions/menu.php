@@ -7,6 +7,7 @@ if($_SESSION['val']){
         include('templates/views/menuView.html');
         switch($_GET['aux']){
             case "fconductores":
+                require('templates/forms/PConductores.php');
                 include('templates/views/FConductores.html');
                 break;
             case "flicencias":
