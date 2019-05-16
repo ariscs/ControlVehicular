@@ -8,6 +8,9 @@ if(isset($_POST['Submit'])){
     $fVencimiento= $_POST['fVencimiento'];
     $Lugar= $_POST['lugar'];
     $Expide= $_POST['expide'];
+    $Foto= $_FILES['Foto'];
+
+    
 
     $Con = Conectar();
     $SQL = "INSERT INTO licencias(Conductor, Expedicion, Tipo, Vencimiento, Lugar, Expide) 
