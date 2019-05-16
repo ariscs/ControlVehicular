@@ -10,15 +10,15 @@ if(isset($_POST['Submit'])){
     $Expide= $_POST['expide'];
     $Foto= $_FILES['Foto'];
 
-    $_FILES['Foto']['name']=$Conductor . ".jpg";
+    $Foto['name']=$Conductor . ".jpg";
     
-    $name = $_FILES['Foto']['name'];
-    $location = "C:/xampp/htdocs/ControlVehicular/templates/img/Fotos";
+    $name = $Foto['name'];
+    $location = "C:/xampp/htdocs/ControlVehicular/templates/img/Fotos/";
     $tmp_name = $_FILES['Foto']['tmp_name'];
     
 
     move_uploaded_file($tmp_name, $location.$name);
-    $location2=$location.$Conductor;
+    $location2=$location.$name;
 
     $Con = Conectar();
     $SQL = "INSERT INTO licencias(Conductor, Expedicion, Tipo, Vencimiento, Lugar, Expide, Foto) 
