@@ -10,7 +10,20 @@ if($_SESSION['val']){
                 include('templates/views/FConductores.html');
                 break;
             case "flicencias":
+                require_once('templates/forms/PLicencias.php');
                 include('templates/views/FLicencias.html');
+                break;
+            case "fpropietarios":
+                require_once('templates/forms/PPropietarios.php');
+                include('templates/views/FPropietarios.html');
+                break;
+            case "fvehiculo":
+                require_once('templates/forms/PVehiculo.php');
+                include('templates/views/FVehiculo.html');
+                break;
+            case "ftenencia":
+                require_once('templates/forms/PTenencia.php');
+                include('templates/views/FTenencia.html');
                 break;
             default:   
                 break;
