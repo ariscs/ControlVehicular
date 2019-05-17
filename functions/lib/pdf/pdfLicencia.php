@@ -35,6 +35,20 @@
 	$FechaN = $Fila[8];
 	$Name = explode(' ',$Nombre);
 
+	//QR
+	include('../qr/phpqrcode.php');
+
+	$dir = '/';
+	$filename = $dir.'qrpdf.png';
+
+	$size=12;
+	$level='Q';
+	$frame=0;
+	$contenido='"idLicencia: "'.$idL.'" Propietario:"'.$CURP.'" Nombre: "'.$Nombre.'" Donador: "'.$Donador.'" Tel: "'.$Tel."''"; //sms:(442)200-0584 mailto:acamachos11@outook.com?subject=Hola Mundo&body=prueba skype:username?call BEGIN:VCARD."\N"
+
+	QRcode::png($contenido, $filename, $level, $size, $frame);
+	//QR
+
 	$pdf = new FPDF();
 	$pdf->AddPage('P', 'A4');
 	$pdf->SetFont('Arial', '', 5);
@@ -97,6 +111,7 @@
 	$pdf->Cell(1, 1, $pdf->Image('estado2.png',50,80,11,9), 0, 0, 'L');
 	$pdf->Cell(1, 1, $pdf->Image('../../../templates/img/Firmas/'.$CURP.'.png',28,80,20,9), 0, 0, 'L');
 	$pdf->Cell(1, 1, $pdf->Image('../../../templates/img/Fotos/'.$CURP.'.png',40,23,20,25), 0, 0, 'L');
+	$pdf->Cell(1, 1, $pdf->Image($filename,11,49,16,16), 0, 0, 'L');
 
 	$pdf->AddPage('P','A4');
 	$pdf->SetFont('Arial','B',5);
@@ -106,9 +121,9 @@
 	$pdf->Cell(52,2,'Domicilio',0,1,'R');
 
 	$pdf->SetFont('Arial','',7);
-	$pdf->MultiCell(52,5,$Dom,0,'R');
+	$pdf->MultiCell(52,4,$Dom,0,'R');
 
-	$pdf->Cell(52,12,'',0,1,'R');
+	$pdf->Cell(52,8,'',0,1,'R');
 
 	$pdf->Cell(52,9,$pdf->Image('carritos.png',10,39,52,6),0,1,'L');
 

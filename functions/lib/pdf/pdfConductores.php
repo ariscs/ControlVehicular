@@ -43,7 +43,7 @@
 	$size=12;
 	$level='Q';
 	$frame=0;
-	$contenido='"Propietario: "'.$Propietario.'" idV:"'.$idV.'" Placa: "'.$Placa.'" Color: "'.$Color.'" Linea: ".$Linea'; //sms:(442)200-0584 mailto:acamachos11@outook.com?subject=Hola Mundo&body=prueba skype:username?call BEGIN:VCARD."\N"
+	$contenido='"Propietario: "'.$Propietario.'" idV:"'.$idV.'" Placa: "'.$Placa.'" Color: "'.$Color.'" Linea: "'.$Linea; //sms:(442)200-0584 mailto:acamachos11@outook.com?subject=Hola Mundo&body=prueba skype:username?call BEGIN:VCARD."\N"
 
 	QRcode::png($contenido, $filename, $level, $size, $frame);
 	//QR
