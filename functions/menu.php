@@ -26,6 +26,9 @@ if($_SESSION['val']){
             case "felicencias":
                 include('templates/views/FELicencias.php');
                 break;
+            case "fpdfLicencias":
+                include('templates/views/fpdfLicencias.html');
+                break;
             case "fpropietarios":
                 require_once('templates/forms/PPropietarios.php');
                 include('templates/views/FPropietarios.html');

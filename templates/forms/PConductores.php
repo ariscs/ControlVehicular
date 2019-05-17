@@ -34,7 +34,7 @@ if(isset($_POST['Submit'])){
 	// print("Fecha de nacimiento: ".$FechaN. "<br>");
 
     $Con = Conectar();
-	$SQL = "INSERT INTO conductores VALUES ('$CURP', '$Nombre', '$Domicilio', '$location2', '$GrupoS', '$Restricciones', '$TelE', '$FechaN','$Donante');";
+	$SQL = "INSERT INTO conductores VALUES ('$CURP', '$Nombre', '$Domicilio', '$location2', '$Donante','$GrupoS', '$Restricciones', '$TelE', '$FechaN');";
 	EjecutarConsulta($Con,$SQL);
 
 	$affected = mysqli_affected_rows($Con);

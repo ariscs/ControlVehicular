@@ -10,7 +10,7 @@ if(isset($_POST['Submit'])){
     $Expide= $_POST['expide'];
     $Foto= $_FILES['Foto'];
 
-    $Foto['name']=$Conductor . ".jpg";
+    $Foto['name']=$Conductor . ".png";
     
     $name = $Foto['name'];
     $location = "C:/xampp/htdocs/ControlVehicular/templates/img/Fotos/";
