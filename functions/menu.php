@@ -26,6 +26,9 @@ if($_SESSION['val']){
             case "felicencias":
                 include('templates/views/FELicencias.php');
                 break;
+            case "fpdfLicencias":
+                include('templates/views/fpdfLicencias.html');
+                break;
             case "fpropietarios":
                 require_once('templates/forms/PPropietarios.php');
                 include('templates/views/FPropietarios.html');
@@ -46,6 +49,9 @@ if($_SESSION['val']){
             case "fevehiculo":
                 include('templates/views/FEVehiculo.php');
                 break;
+            case "fpdfConductores":
+                include('templates/views/fpdfConductores.html');
+                break;                
             case "ftenencia":
                 require_once('templates/forms/PTenencia.php');
                 include('templates/views/FTenencia.html');

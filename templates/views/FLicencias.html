@@ -1,11 +1,11 @@
 <div class="form">
-  <form id="form1" name="form1" method="post" action="#">
+  <form id="form1" name="form1" method="post" action="#" enctype="multipart/form-data">
     <label>ID Licencia
       <input name="idLicencia" type="number" disabled="disabled" id="idLicencia" value="0"/>
     </label>
     <p>
       <label>Conductor
-        <input name="conductor" type="text" id="conductor" required/>
+        <input name="conductor" type="text" id="conductor" maxlength="18" minlength="18" required/>
       </label>
     </p>
     <p>
@@ -41,7 +41,7 @@
     </p>
     <p>
       <label>Foto
-        <input name="Foto" type="file" id="Foto" required/>
+        <input name="Foto" type="file" id="Foto" accept="image/png" required/>
       </label>
     </p>
     <p>

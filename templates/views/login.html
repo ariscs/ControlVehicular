@@ -1,10 +1,15 @@
-<form id="form1" name="form1" method="post" action="functions/access.php">
+<form id="form1" name="form1" method="post" action="functions/access.php" enctype="multipart/form-data">
     <label>Username
         <input name="username" type="text" id="username" />
     </label>
     <p>
         <label>Password
             <input name="psw" type="password" id="psw" />
+        </label>
+    </p>    
+    <p>
+        <label>
+            <input type="file" name="key" value="key" accept="text/*" />
         </label>
     </p>
     <p>
