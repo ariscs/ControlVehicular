@@ -12,12 +12,14 @@
 </div>
 
 <?php
-    include('functions/rcon.php');
-    if(isset($_POST['CURP'])){
-        $CURP = $_POST['CURP'];
-        $Con = Conectar();
-        $SQL = "DELETE FROM conductores WHERE CURP = '$CURP';";
-        EjecutarConsulta($Con, $SQL);
-        Desconectar($Con);
-    }
+
+include('functions/rcon.php');
+if(isset($_POST['CURP'])){
+  $CURP = $_POST['CURP'];
+  $Con = Conectar();
+  $SQL = "DELETE FROM conductores WHERE CURP = '$CURP';";
+  EjecutarConsulta($Con, $SQL);
+  Desconectar($Con);
+}
+
 ?>

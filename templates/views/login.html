@@ -1,20 +1,27 @@
-<form id="form1" name="form1" method="post" action="functions/access.php" enctype="multipart/form-data">
-    <label>Username
-        <input name="username" type="text" id="username" />
-    </label>
-    <p>
-        <label>Password
-            <input name="psw" type="password" id="psw" />
-        </label>
-    </p>    
-    <p>
-        <label>
-            <input type="file" name="key" value="key" accept="text/*" />
-        </label>
-    </p>
-    <p>
-        <label>
-            <input type="submit" name="Submit" value="Submit" />
-        </label>
-    </p>
-</form>
+<div class="loginForm">
+    <div class="loginForm__box">
+        <h1 class="loginForm__title">Inicio de sesión</h1>
+        <form class="loginForm__form" method="post" action="functions/access.php" enctype="multipart/form-data">
+            <div class="form__group">
+                <input class="form__input" placeholder="Nombre de usuario" name="username" type="text" id="username" required/>
+                <label for="name" class="form__label">Nombre de usuario</label>
+            </div>
+
+            <div class="form__group">
+                <input class="form__input" placeholder="Contraseña" name="psw" type="password" id="psw" required/>
+                <label for="name" class="form__label">Contraseña</label>
+            </div>
+            
+            <div class="form__group">
+                <input class="upload" type="file" id="key" name="key" value="key" accept="text/*"/>
+                <div class="upload__button flexCC">
+                    <label for="key" class="upload__label">Key</label>
+                </div>
+            </div>
+
+            <div class="form__group">
+                <input type="submit" name="Submit" value="Submit"/>
+            </div>
+        </form>
+    </div>
+</div>
