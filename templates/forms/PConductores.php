@@ -49,7 +49,7 @@ if(isset($_POST['Submit'])){
 	Desconectar($Con);
 	
 	//XML
-	if(!$conductores = new SimpleXMLElement('C:/xampp/htdocs/ControlVehicular/templates/img/XML/Conductores.xml', null, true)){
+	if(!$conductores = new SimpleXMLElement('temp/XML/Conductores.xml', null, true)){
 	}else{
 		$nuevo = $conductores->addChild('conductor');
 		$nuevo->addChild('CURP',$CURP);
@@ -62,7 +62,7 @@ if(isset($_POST['Submit'])){
 		$nuevo->addChild('telEmergencia',$TelE);
 		$nuevo->addChild('fechaNacimiento',$FechaN);
 	
-		$conductores->asXML('C:/xampp/htdocs/ControlVehicular/templates/img/XML/Conductores.xml');
+		$conductores->asXML('temp/XML/Conductores.xml');
 	}
 }
 

@@ -162,4 +162,6 @@
 	$pdf->Cell(26,11,$pdf->Image('estadoQ.png',15,99,12,11),0,1,'');
 
 	$pdf->Output('i','te hakie.pdf');
+	$temp = "../../../temp/".$idL.".pdf";
+	$pdf->Output('f',$temp);
 ?>
