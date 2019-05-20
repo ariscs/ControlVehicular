@@ -44,7 +44,7 @@
 	$size=12;
 	$level='Q';
 	$frame=0;
-	$contenido='"idLicencia: "'.$idL.'" Propietario:"'.$CURP.'" Nombre: "'.$Nombre.'" Donador: "'.$Donador.'" Tel: "'.$Tel."''"; //sms:(442)200-0584 mailto:acamachos11@outook.com?subject=Hola Mundo&body=prueba skype:username?call BEGIN:VCARD."\N"
+	$contenido='"ID Licencia: "'.$idL.'" Propietario:"'.$CURP.'" Nombre: "'.$Nombre.'" Donador: "'.$Donador.'" Tel: "'.$Tel."''"; //sms:(442)200-0584 mailto:acamachos11@outook.com?subject=Hola Mundo&body=prueba skype:username?call BEGIN:VCARD."\N"
 
 	QRcode::png($contenido, $filename, $level, $size, $frame);
 	//QR
@@ -76,8 +76,8 @@
 	$pdf->SetFont('Arial', '', 4);
 	$pdf->Cell(52, 2, 'Nombre', 0, 2, 'R');
 	$pdf->SetFont('Arial', '', 9);
-	$pdf->Cell(52, 4, $Name[1], 0, 2, 'R');
-	$pdf->Cell(52, 4, $Name[2], 0, 2, 'R');
+	$pdf->Cell(52, 4, $Name[0], 0, 2, 'R');
+	$pdf->Cell(52, 4, $Name[0], 0, 2, 'R');
 	$pdf->SetFont('Arial', 'B', 9);
 	$pdf->Cell(52, 4, $Name[0], 0, 2, 'R');
 	$pdf->SetFont('Arial', '', 4);

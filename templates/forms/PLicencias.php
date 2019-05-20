@@ -25,6 +25,20 @@ if(isset($_POST['Submit'])){
         VALUES ('$Conductor', '$fExpedicion', '$Tipo', '$fVencimiento', '$Lugar', '$Expide','$location2')";
     EjecutarConsulta($Con,$SQL);
     Desconectar($Con);
+
+    if(!$licencias = new SimpleXMLElement('C:/xampp/htdocs/ControlVehicular/templates/img/XML/Licencias.xml', null, true)){
+    }else{
+        $nuevo = $licencias->addChild('Licencia');
+        $nuevo->addChild('Conductor',$Conductor);
+        $nuevo->addChild('Expedicion',$fExpedicion);
+        $nuevo->addChild('Tipo',$Tipo);
+        $nuevo->addChild('Vencimiento',$fVencimiento);
+        $nuevo->addChild('Lugar',$Lugar);
+        $nuevo->addChild('Expide',$Expide);
+        $nuevo->addChild('Foto',$location2);
+    
+        $licencias->asXML('C:/xampp/htdocs/ControlVehicular/templates/img/XML/Licencias.xml');
+    }
 }
 
 ?>
