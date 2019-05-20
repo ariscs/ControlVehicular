@@ -43,6 +43,7 @@
 		<th>Fecha de vencimiento</th>
 		<th>Lugar</th>
 		<th>Expide</th>
+		<th>Foto</th>
 	</tr>
 <?php		
 		for($F=0;$F<mysqli_num_rows($Query);$F++){
