@@ -5,12 +5,12 @@
   </label>
   <p>
     <label>Propietario
-    <input name="propietario" type="text" id="propietario" required/>
+    <input name="propietario" type="text" id="propietario" maxlength="13" minlength="13" required/>
     </label>
   </p>
   <p>
     <label>Placa
-    <input name="placa" type="text" id="placa" required/>
+    <input name="placa" type="text" id="placa" maxlength="12" required/>
     </label>
   </p>
   <p>
@@ -48,7 +48,7 @@ Comercial</label>
   </p>
   <p>
     <label>Número de puertas
-    <input name="numPuertas" type="number" id="numPuertas" min="1" max="4"/>
+    <input name="numPuertas" type="number" id="numPuertas" min="1" max="8"/>
     </label>
   </p>
   <p>
@@ -96,7 +96,7 @@ Estandar</label>
   </p>
   <p>
     <label>Cilindraje
-    <input name="cilindraje" type="number" id="cilindraje" min="0" max="12"/>
+    <input name="cilindraje" type="number" id="cilindraje" min="0" step=".1" max="12"/>
     </label><label></label>
   </p>
   <p>

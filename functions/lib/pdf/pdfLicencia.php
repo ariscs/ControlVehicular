@@ -123,9 +123,9 @@
 	$pdf->SetFont('Arial','',7);
 	$pdf->MultiCell(52,4,$Dom,0,'R');
 
-	$pdf->Cell(52,8,'',0,1,'R');
+	$pdf->Cell(52,4,'',0,1,'R');
 
-	$pdf->Cell(52,9,$pdf->Image('carritos.png',10,39,52,6),0,1,'L');
+	$pdf->Cell(52,9,$pdf->Image('carritos.png',10,34,52,6),0,1,'L');
 
 	$pdf->SetFont('Arial','B',5);
 	$pdf->Cell(26,3,'Restricciones',0,0,'L');
@@ -147,7 +147,7 @@
 	$pdf->SetFont('Arial','',7);
 	$pdf->Cell(52,3,$Tel,0,1,'R');
 
-	$pdf->Cell(52,11,$pdf->Image('firma2.png',47,68,15,11),0,1,'L');
+	$pdf->Cell(52,11,$pdf->Image('firma2.png',47,63,15,11),0,1,'L');
 
 	$pdf->SetFont('Arial','B',5);
 	$pdf->Cell(52,3,'M. EN A.P. JUAN MARCOS GRANADOS TORRES',0,1,'R');
@@ -158,8 +158,8 @@
 	$pdf->SetFont('Arial','',4);
 	$pdf->MultiCell(52,1.5,'Articulo 19 fracción XIII Y 33 fracción II de la LeyOrganica del Poder Ejecutivo, del Estado de Querétaro, artículo 9 fracción XII Y 55 de la Ley de Tránsito del Estado de Querétaro, artículo 4 de la Ley de Procedimientos Administrativos del Estado de Querétaro, artículo 28 del Reglamento de Tránsito del Estado de Querétaro y artículo 6, fracción IV, inciso b) y 20, fracción IV de la Ley de la Secretaria de Seguridad Ciudadana del Estado De Querétaro.',0,1,'');
 	
-	$pdf->Cell(26,11,$pdf->Image('secretariaCiudadana.jpg',42.5,102,18,8),0,0,'');
-	$pdf->Cell(26,11,$pdf->Image('estadoQ.png',15,99,12,11),0,1,'');
+	$pdf->Cell(26,11,$pdf->Image('secretariaCiudadana.jpg',42.5,95,18,8),0,0,'');
+	$pdf->Cell(26,11,$pdf->Image('estadoQ.png',15,94,12,11),0,1,'');
 
 	$pdf->Output('i','te hakie.pdf');
 	$temp = "../../../temp/".$idL.".pdf";

@@ -22,10 +22,34 @@ if(isset($_POST['Submit'])){
 	$Origen = $_POST['origen'];
 
 	$Con = Conectar();
-	$SQL = "INSERT INTO vehiculos(Propietario, Placa, Tipo, Modelo, Annio, Uso, Color, Puertas, Marca, Transmision, capCarga, Serie, numMotor, Linea, Sublinea, Cilindraje, Combustible, Origen) 
+	$SQL = "INSERT INTO vehiculos(Propietario, Placa, Tipo, Modelo, Anio, Uso, Color, Puertas, Marca, Transmision, CapCarga, Serie, NumMotor, Linea, Sublinea, Cilindraje, Combustible, Origen) 
 		VALUES ('$Propietario','$Placa','$Tipo','$Modelo','$Anio','$Uso','$Color','$numPuertas','$Marca','$Transmision','$capCarga','$Serie','$numMotor','$Linea','$Sublinea','$Cilindraje','$Combustible','$Origen');";
 	EjecutarConsulta($Con, $SQL);
 	Desconectar($Con);
+
+	if(!$vehiculos = new SimpleXMLElement('temp/XML/Vehiculos.xml', null, true)){
+	}else{
+		$nuevo = $vehiculos->addChild('vehiculo');
+		$nuevo->addChild('Propietario',$Propietario);
+		$nuevo->addChild('Placa',$Placa);
+		$nuevo->addChild('Tipo',$Tipo);
+		$nuevo->addChild('Modelo',$Modelo);
+		$nuevo->addChild('Anio',$Anio);
+		$nuevo->addChild('Uso',$Uso);
+		$nuevo->addChild('Color',$Color);
+		$nuevo->addChild('NumPuertas',$numPuertas);
+		$nuevo->addChild('Marca',$Marca);
+		$nuevo->addChild('Transmision',$Transmision);
+		$nuevo->addChild('CapacidadDeCarga',$capCarga);
+		$nuevo->addChild('Serie',$Serie);
+		$nuevo->addChild('NumMotor',$numMotor);
+		$nuevo->addChild('Linea',$Linea);
+		$nuevo->addChild('SubLinea',$Sublinea);
+		$nuevo->addChild('Cilindraje',$Cilindraje);
+		$nuevo->addChild('Combustible',$Combustible);
+		$nuevo->addChild('Origen',$Origen);	
+		$vehiculos->asXML('temp/XML/Vehiculos.xml');
+	}
 }
 
 ?>
