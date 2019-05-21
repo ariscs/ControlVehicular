@@ -1,14 +1,16 @@
-var coll = document.getElementsByClassName("navBar__cat");
-var i;
+function hide(obj){
+    var coll = document.getElementsByClassName("active");
+    for(var i = 0; i < coll.length; i++){
+        var c = coll[i].nextElementSibling;
+        c.style.maxHeight = null;
+        coll[i].classList.toggle("active");
+    }
 
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
+    obj.classList.toggle("active");
+    var content = obj.nextElementSibling;
     if (content.style.maxHeight){
-      content.style.maxHeight = null;
+        content.style.maxHeight = null;
     } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-    } 
-  });
+        content.style.maxHeight = content.scrollHeight + "px";
+    }
 }
