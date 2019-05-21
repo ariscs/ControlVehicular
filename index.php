@@ -40,5 +40,8 @@ if(isset($_GET['view'])){
 }
 
 ?>
+
+<script src="templates/js/functions.js"></script>
+
 </body>
 </html>
