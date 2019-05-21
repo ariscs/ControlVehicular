@@ -76,6 +76,9 @@ if($_SESSION['val']){
                 require_once('templates/forms/PMultas.php');
                 include('templates/views/FMultas.html');
                 break;
+            case "fpdfMulta":
+                include('templates/views/fpdfMulta.html');
+                break;
             case "fcmultas":
                 include('templates/views/FCMultas.php');
                 break;
