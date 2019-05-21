@@ -27,7 +27,7 @@ if(isset($_POST['Submit'])){
 	EjecutarConsulta($Con, $SQL);
 	Desconectar($Con);
 
-	if(!$vehiculos = new SimpleXMLElement('temp/XML/Vehiculos.xml', null, true)){
+	if(!$vehiculos = new SimpleXMLElement('temp/XML/Vehiculos/Alta.xml', null, true)){
 	}else{
 		$nuevo = $vehiculos->addChild('vehiculo');
 		$nuevo->addChild('Propietario',$Propietario);
@@ -48,7 +48,7 @@ if(isset($_POST['Submit'])){
 		$nuevo->addChild('Cilindraje',$Cilindraje);
 		$nuevo->addChild('Combustible',$Combustible);
 		$nuevo->addChild('Origen',$Origen);	
-		$vehiculos->asXML('temp/XML/Vehiculos.xml');
+		$vehiculos->asXML('temp/XML/Vehiculos/Alta.xml');
 	}
 }
 

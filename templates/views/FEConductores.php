@@ -26,20 +26,7 @@ if(isset($_POST['CURP'])){
 
   // print("<br>CURP = ". $row[0]);
   //XML
-  $searchString = '696969696969696969';
-
-  $doc = new DOMDocument;
-  $doc->preserveWhiteSpace = FALSE;
-  $doc->load('temp/XML/Conductores.xml');
-
-  $xPath = new DOMXPath($doc);
-  $query = sprintf('//conductor[./CURP[contains(., "%s")]]', $searchString);
-  foreach($xPath->query($query) as $node) {
-      $node->parentNode->removeChild($node);
-  }
-  $doc->formatOutput = TRUE;
-  echo $doc->saveXML();
-
+  
   //DELETE DE LA BD
   $SQL = "DELETE FROM conductores WHERE CURP = '$CURP';";
   EjecutarConsulta($Con, $SQL);

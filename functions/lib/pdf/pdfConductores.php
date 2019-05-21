@@ -200,7 +200,7 @@
 	$pdf->Cell(50,5,'TARJETA DE CIRCULACIÓN VEHICULAR',0,1,'L',0);
 
 	$pdf->Output('i','te hakie.pdf');
-	$temp = "../../../temp/".$idVehiculo.".pdf";
+	$temp = "../../../temp/PDF/Circulaciones/".$idVehiculo.".pdf";
 	$pdf->Output('f',$temp);
 
 	// $pdf->Image('estado.png',10,10,20,20);
