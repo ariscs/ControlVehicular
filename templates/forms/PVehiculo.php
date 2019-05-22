@@ -30,7 +30,6 @@ if(isset($_POST['Submit'])){
 	if(!$vehiculos = new SimpleXMLElement('temp/XML/Vehiculos/Alta.xml', null, true)){
 	}else{
 		$nuevo = $vehiculos->addChild('vehiculo');
-		$nuevo = $vehiculos->addChild('vehiculo');
 		$nuevo->addChild('Propietario',$Propietario);
 		$nuevo->addChild('Placa',$Placa);
 		$nuevo->addChild('Tipo',$Tipo);

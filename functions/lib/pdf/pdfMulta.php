@@ -35,7 +35,7 @@
 	$pdf->SetMargins(4,0,2);
 	$pdf->SetFont('Arial', 'B', 15);
 	$pdf->Cell(14, 0,'',0, 0);
-	$pdf->Cell(25, 8,'MULTA', 0, 0);
+	$pdf->Cell(22.5, 8,'MULTA', 0, 0);
 	$pdf->Cell(0, 0,$pdf->Image('barra.png'), 0, 1);
 	$pdf->SetFont('Arial', 'B', 8);
 	$pdf->Cell(20, 8, 'Folio: ', 0, 0);
