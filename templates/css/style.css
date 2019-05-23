@@ -68,7 +68,7 @@ body {
 .navBar__cat{
     color: white;
     cursor: pointer;
-    padding: 1.5rem;
+    padding: .8rem 1.5rem;
     width: 100%;
     border: none;
     text-align: left;
@@ -134,7 +134,18 @@ body {
 .form {
     height: 100%;
     width: 80%;
-    background-color: orangered;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 .back{
