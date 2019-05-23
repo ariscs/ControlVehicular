@@ -7,7 +7,7 @@ if(isset($_POST['Submit'])){
 	$Domicilio= $_POST['domicilio'];	
 	$archivo=$_FILES['archivo'];
 
-	$archivo['name']=$CURP . ".jpg";
+	$archivo['name']=$CURP . ".png";
     $name = $archivo['name'];
     $location = "C:/xampp/htdocs/ControlVehicular/templates/img/Firmas/";
     $tmp_name = $archivo['tmp_name'];

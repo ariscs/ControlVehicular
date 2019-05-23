@@ -72,6 +72,9 @@ if($_SESSION['val']){
             case "feverificacion":
                 include('templates/views/FEVerificacion.php');
                 break;
+            case "fpdfVerificaciones":
+                include('templates/views/fpdfVerificaciones.html');
+                break;
             case "fmultas":
                 require_once('templates/forms/PMultas.php');
                 include('templates/views/FMultas.html');
