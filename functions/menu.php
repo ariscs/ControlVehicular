@@ -1,6 +1,4 @@
-<?php 
-
-session_start();
+<?php
 
 if($_SESSION['val']){
     if(isset($_GET['aux'])){
@@ -49,6 +47,9 @@ if($_SESSION['val']){
             case "fevehiculo":
                 include('templates/views/FEVehiculo.php');
                 break;
+            case "fmvehiculo":
+                include('templates/views/FMVehiculos.php');
+                break;
             case "fpdfConductores":
                 include('templates/views/fpdfConductores.html');
                 break;                
@@ -88,7 +89,7 @@ if($_SESSION['val']){
             case "femultas":
                 include('templates/views/FEMultas.php');
                 break;
-            default:   
+            default:
                 break;
         }
     }else{

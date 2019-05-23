@@ -12,17 +12,19 @@
 </head>
 <body>
 <?php
+session_start();
 
 if(isset($_GET['view'])){
     switch($_GET['view']){
         case "login":
-            include("templates/views/login.html");
+            if(isset($_SESSION['val'])){
+                header("Location:index.php?view=menu");    
+            }else{
+                include("templates/views/login.html");
+            }
             break;
         case "close":
             header("Location:functions/close.php");
-            break;
-        case "error":
-            include('templates/views/error.html');
             break;
         case "block":
             include('templates/views/block.html');
@@ -31,12 +33,17 @@ if(isset($_GET['view'])){
             require_once('functions/menu.php');
             break;
         default:
-            header("Location:index.php?view=".urlencode("error"));        
+            header("Location:index.php?view=".urlencode("login"));        
             break;
     }
 }else{
-    $_GET['view'] = "inicio";
-    header("Location:index.php?view=".urlencode("login"));
+    if($_SESSION['val'] == TRUE){
+        $_GET['view'] = "inicio";
+        header("Location:index.php?view=".urlencode("menu"));    
+    }else{
+        $_GET['view'] = "inicio";
+        header("Location:index.php?view=".urlencode("login"));
+    }
 }
 
 ?>
