@@ -90,7 +90,7 @@ if(isset($_POST['folio'])){
                     <option value="Vehiculo Ligero">Vehículo Ligero</option>
                     <option value="Comercial">Comercial</option>
                     <option value="Turismo">Turismo</option>
-                    <option value="Vehículo Especia/Agricola">Vehículo Especia/Agrícola</option>
+                    <option value="Vehículo Especia/Agricola">Vehículo Especial/Agrícola</option>
                 </select>
                 <label for="tipo" class="form__label">Tipo</label>
             </div>
