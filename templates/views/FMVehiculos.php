@@ -7,7 +7,7 @@
             <label for="folio" class="form__label">Folio</label>
         </div>
 
-        <input type="submit" name="Submit" value="Consultar" />
+        <input type="submit" name="Submit" value="Buscar" />
     </form>
 
 
