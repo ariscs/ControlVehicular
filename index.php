@@ -17,7 +17,8 @@ session_start();
 if(isset($_GET['view'])){
     switch($_GET['view']){
         case "login":
-            if(isset($_SESSION['val'])){
+            if(isset($_SESSION['val']))
+            {
                 header("Location:index.php?view=menu");    
             }else{
                 include("templates/views/login.html");

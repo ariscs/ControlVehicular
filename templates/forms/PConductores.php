@@ -14,24 +14,12 @@ if(isset($_POST['Submit'])){
 	
 	move_uploaded_file($tmp_name, $location.$name);
     $location2=$location.$name;
-	
-	//Archivo
 
 	$Donante= $_POST['donante'];
 	$GrupoS= $_POST['grupo'];
 	$Restricciones= $_POST['restricciones'];
 	$TelE= $_POST['tel'];
 	$FechaN= $_POST['fecha'];
-	
-	// print("CURP: ".$CURP. "<br>");
-	// print("Nombre: ".$Nombre. "<br>");
-	// print("Domicilio: ".$Domicilio. "<br>");
-	// print("Firma: ".$location2. "<br>");
-	// print("Donante: ".$Donante. "<br>");
-	// print("Grupo sanguineo: ".$GrupoS. "<br>");
-	// print("Restricciones: ".$Restricciones. "<br>");
-	// print("Tel de emergencia: ".$TelE. "<br>");
-	// print("Fecha de nacimiento: ".$FechaN. "<br>");
 
     $Con = Conectar();
 	$SQL = "INSERT INTO conductores VALUES ('$CURP', '$Nombre', '$Domicilio', '$location2', '$Donante','$GrupoS', '$Restricciones', '$TelE', '$FechaN');";
