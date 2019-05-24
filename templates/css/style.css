@@ -62,7 +62,7 @@ body {
     font-size: 1.6rem;
     background-color: #1d2b69;
     overflow-x: hidden;
-    position: relative;
+    position: fixed;
 }
 
 .navBar__cat{
@@ -75,7 +75,6 @@ body {
     outline: none;
     font-size: 2rem;
     background-color: transparent;
-    border-bottom: 1px solid #fff;
 }
 
 .active, .navBar__cat:hover{
@@ -88,7 +87,7 @@ body {
     padding: 1rem 0;
     text-align: center;
     color: #fff;
-    background-color: #69C1FF;
+    margin-bottom: 2rem;
 }
 
 .navBar__o{
@@ -135,17 +134,22 @@ body {
     height: 100%;
     width: 80%;
     background-color: #fff;
+    margin-left: 20%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
 
-.form form{
+#form1{
+    width: 70%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+}
+
+.update{
+    /* display: none; */
 }
 
 .back{
