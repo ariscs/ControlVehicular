@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vehiculos>
 	
-</vehiculos>
+<vehiculo><IDVehiculo>3</IDVehiculo><Propietario>MEBU960207CS7</Propietario><Placa>UKN7022</Placa><Tipo>Camioneta</Tipo><Modelo>Star</Modelo><Marca>Chevrolet</Marca><Anio>2018</Anio><Uso>Personal</Uso><Color>Rojo</Color><NumPuertas>3</NumPuertas><Marca>Chevrolet</Marca><Transmision>Manual</Transmision><CapacidadDeCarga>0.00</CapacidadDeCarga><Serie>1111111</Serie><NumMotor>01111</NumMotor><Linea>Ciaz</Linea><SubLinea>RS</SubLinea><Cilindraje>6</Cilindraje><Combustible>Magna</Combustible><Origen>EUA</Origen></vehiculo></vehiculos>

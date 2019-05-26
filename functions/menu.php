@@ -14,6 +14,9 @@ if($_SESSION['val']){
             case "feconductores":
                 include('templates/views/FEConductores.php');
                 break;
+            case "fmconductores":
+                include('templates/views/FMConductores.php');
+                break;
             case "flicencias":
                 require_once('templates/forms/PLicencias.php');
                 include('templates/views/FLicencias.html');

@@ -44,6 +44,31 @@ if(isset($_POST['SubmitUpdate'])){
     $affected = mysqli_affected_rows($Con);
     if($affected > 0){
       $msg = "Se actualizó la información correctamente";
+      if(!$vehiculos = new SimpleXMLElement('temp/XML/Vehiculos/Cambios.xml', null, true)){
+        }else{
+            $nuevo = $vehiculos->addChild('vehiculo');
+            $nuevo->addChild('IDVehiculo',$id);
+            $nuevo->addChild('Propietario',$propietario);
+            $nuevo->addChild('Placa',$placa);
+            $nuevo->addChild('Tipo',$tipo);
+            $nuevo->addChild('Modelo',$modelo);
+            $nuevo->addChild('Marca',$marca);
+            $nuevo->addChild('Anio',$anio);
+            $nuevo->addChild('Uso',$uso);
+            $nuevo->addChild('Color',$color);
+            $nuevo->addChild('NumPuertas',$puertas);
+            $nuevo->addChild('Marca',$marca);
+            $nuevo->addChild('Transmision',$transmision);
+            $nuevo->addChild('CapacidadDeCarga',$carga);
+            $nuevo->addChild('Serie',$serie);
+            $nuevo->addChild('NumMotor',$motor);
+            $nuevo->addChild('Linea',$linea);
+            $nuevo->addChild('SubLinea',$sublinea);
+            $nuevo->addChild('Cilindraje',$cilindraje);
+            $nuevo->addChild('Combustible',$combustible);
+            $nuevo->addChild('Origen',$origen); 
+            $vehiculos->asXML('temp/XML/Vehiculos/Cambios.xml');
+        }
       echo "<script type='text/javascript'>alert('$msg');</script>";
     }elseif($affected == 0){
       $msg = "No fue posible realizar los cambios";
@@ -190,7 +215,8 @@ if(isset($_POST['folio'])){
 <?php
 
     }else{
-        //No encontro nada
+        $msg = "No se encontró un vehiculo con ese folio";
+        echo "<script type='text/javascript'>alert('$msg');</script>";
     }
     Desconectar($Con);    
 }
