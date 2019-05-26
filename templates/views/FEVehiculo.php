@@ -1,13 +1,11 @@
 <div class="form">
   <form id="form1" name="form1" method="post" action="#">
-    <label>ID Vehiculo
-      <input name="id" type="text" id="id" />
-    </label>
-    <p>
-      <label>
-        <input type="submit" name="Submit" value="Eliminar" />
-      </label>
-    </p>
+    <div class="form__group">
+      <input name="id" type="number" id="id" class="form__input" placeholder="ID Vehículo"/>  
+      <label for="id" class="form__label">ID Vehículo</label>
+    </div>
+  
+    <input type="submit" name="Submit" value="Eliminar" />
   </form>
 </div>
 
@@ -18,10 +16,8 @@ if(isset($_POST['id'])){
   $Con = Conectar();
     //SELECT
   $SQL = "SELECT * FROM vehiculos WHERE IdVehiculo = '$AUX';";
-
   $resultado=EjecutarConsulta($Con, $SQL);
-
-  print_r($row = mysqli_fetch_array($resultado));
+  $row = mysqli_fetch_array($resultado);
 
   $IdVehiculo = $row[0];
   $Propietario = $row[1];
@@ -42,6 +38,7 @@ if(isset($_POST['id'])){
   $Cilindraje = $row[16];
   $Combustible = $row[17];
   $Origen = $row[18];
+
   //XML
   if(!$vehiculos = new SimpleXMLElement('temp/XML/Vehiculos/Baja.xml', null, true)){
   }else{
@@ -70,6 +67,19 @@ if(isset($_POST['id'])){
     //DELETE DE LA BD
   $SQL = "DELETE FROM vehiculos WHERE IdVehiculo = '$AUX';";
   EjecutarConsulta($Con, $SQL);
+
+  $affected = mysqli_affected_rows($Con);
+	if($affected > 0){
+		$msg = "Vehículo eliminado de forma exitosa";
+		echo "<script type='text/javascript'>alert('$msg');</script>";
+	}elseif($affected == 0){
+		$msg = "No fue posible eliminar el vehículo, verifique que este vehículo exista";
+		echo "<script type='text/javascript'>alert('$msg');</script>";
+	}else{
+		$msg = "Verifique que este vehículo exista";
+		echo "<script type='text/javascript'>alert('$msg');</script>";
+	}
+
   Desconectar($Con);
 }
 ?>

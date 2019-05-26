@@ -25,6 +25,19 @@ if(isset($_POST['Submit'])){
 	$SQL = "INSERT INTO vehiculos(Propietario, Placa, Tipo, Modelo, Anio, Uso, Color, Puertas, Marca, Transmision, CapCarga, Serie, NumMotor, Linea, Sublinea, Cilindraje, Combustible, Origen) 
 	VALUES ('$Propietario','$Placa','$Tipo','$Modelo','$Anio','$Uso','$Color','$numPuertas','$Marca','$Transmision','$capCarga','$Serie','$numMotor','$Linea','$Sublinea','$Cilindraje','$Combustible','$Origen');";
 	EjecutarConsulta($Con, $SQL);
+
+	$affected = mysqli_affected_rows($Con);
+	if($affected > 0){
+		$msg = "Se registró la información del nuevo vehículo correctamente";
+		echo "<script type='text/javascript'>alert('$msg');</script>";
+	}elseif($affected == 0){
+		$msg = "No fue posible registrar el vehículo";
+		echo "<script type='text/javascript'>alert('$msg');</script>";
+	}else{
+		$msg = "Verifique que el propietario exista";
+		echo "<script type='text/javascript'>alert('$msg');</script>";
+	}
+
 	Desconectar($Con);
 
 	if(!$vehiculos = new SimpleXMLElement('temp/XML/Vehiculos/Alta.xml', null, true)){

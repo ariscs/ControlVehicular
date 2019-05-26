@@ -26,13 +26,16 @@ if(isset($_POST['Submit'])){
 	EjecutarConsulta($Con,$SQL);
 
 	$affected = mysqli_affected_rows($Con);
-	// if($affected > 0){
-	// 	print($affected." Elemento(s) insertado(s)");
-	// }elseif($affected == 0){
-	// 	print("No se insertó ningun elemento");
-	// }else{
-	// 	print("Hubo un error en la consulta");
-	// }
+	if($affected > 0){
+		$msg = "Se registró la información del nuevo conductor correctamente";
+		echo "<script type='text/javascript'>alert('$msg');</script>";
+	}elseif($affected == 0){
+		$msg = "No fue posible registrar el conductor";
+		echo "<script type='text/javascript'>alert('$msg');</script>";
+	}else{
+		$msg = "No fue posible registrar el conductor";
+		echo "<script type='text/javascript'>alert('$msg');</script>";
+	}
 
 	Desconectar($Con);
 	

@@ -1,41 +1,60 @@
 <div class="form">
   <form id="form1" name="form1" method="post" action="#" enctype="multipart/form-data">
-    <p>Conductores</p>
-    <label>CURP</label>
-    <input name="CURP" type="text" id="CURP" value="" maxlength="18" minlength="18"/>
 
-    <label>Nombre</label>
-    <input name="nombre" type="text" id="nombre" required/>
+    <div class="form__group">
+      <input name="CURP" type="text" id="CURP" value="" maxlength="18" minlength="18" class="form__input" placeholder="CURP"/>
+      <label class="form__label" for="CURP">CURP</label>
+    </div>
 
-    <label>Domicilio</label>
-    <input name="domicilio" type="text" id="domicilio" required/>
+    <div class="form__group">
+      <input name="nombre" type="text" id="nombre" class="form__input" placeholder="Nombre" required/>
+      <label class="form__label" for="nombre">Nombre</label>
+    </div>
+    
+    <div class="form__group">
+      <input name="domicilio" type="text" id="domicilio" class="form__input" placeholder="Domicilio" required/>
+      <label class="form__label" for="domicilio">Domicilio</label>
+    </div>
 
-    <label>Firma</label>
-    <input type="file" name="archivo" id="archivo" accept="image/png" />
+    <div class="form__group">
+      <input type="file" name="archivo" id="archivo" accept="image/png" class="upload"/>
+      <label for="archivo" class="upload__label btnAnimation">Firma</label>
+    </div>
     
-    <label>Grupo Sanguineo</label>
-    <select name="grupo" id="grupo">
-      <option value="O+">O+</option>
-      <option value="O-">O-</option>
-      <option value="A+">A+</option>
-      <option value="A-">A-</option>
-      <option value="B+">B+</option>
-      <option value="B-">B-</option>
-      <option value="AB+">AB+</option>
-      <option value="AB-">AB-</option>
-    </select>
-    
-    <label>Restricciones</label>
-    <input name="restricciones" type="text" id="restricciones" />
-    
-    <label>Telefono de Emergencia</label>
-    <input name="tel" type="text" id="tel" />
-    
-    <label>Fecha de Nacimiento</label>
-    <input name="fecha" type="date" id="fecha" />
+    <div class="form__group">
+      <select name="grupo" id="grupo" class="form__input">
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+      </select>
+      <label class="form__label" for="grupo">Grupo Sanguineo</label>
+    </div>
 
-    <label>Donador</label>
+    <div class="form__group">
+      <select name="restricciones" id="restricciones" class="form__input">
+        <option value="NINGUNA">Ninguna</option>
+        <option value="USA LENTES">Usa lentes</option>        
+      </select>
+      <label class="form__label" for="restricciones">Restricciones</label>
+    </div>
+    
+    <div class="form__group">
+      <input name="tel" type="number" id="tel" class="form__input" placeholder="Teléfono de Emergencia"/>
+      <label class="form__label" for="tel">Teléfono de Emergencia</label>
+    </div>
+    
+    <div class="form__group">
+      <input name="fecha" type="date" id="fecha" class="form__input"/>
+      <label class="form__label" for="fecha">Fecha de Nacimiento</label>
+    </div>
+
     <input type="checkbox" name="donante" value="1" checked="checked" />
+    <label>Donador</label>
     
     <input type="submit" name="Submit" value="Submit" />
   </form>

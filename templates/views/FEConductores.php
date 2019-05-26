@@ -1,13 +1,12 @@
 <div class="form">
 <form id="form1" name="form1" method="post" action="#">
-  <label>CURP
-  <input name="CURP" type="text" id="CURP" maxlength="18" minlength="18"/>
-  </label>
-  <p>
-    <label>
-    <input type="submit" name="Submit" value="Eliminar" />
-    </label>
-  </p>
+  
+  <div class="form__group">
+    <input name="CURP" type="text" id="CURP" maxlength="18" minlength="18" class="form__input" placeholder="CURP"/>
+    <label class="form__label" for="CURP">CURP</label>
+  </div>
+  
+  <input type="submit" name="Submit" value="Eliminar" />
 </form>
 </div>
 
@@ -52,6 +51,19 @@ if(isset($_POST['CURP'])){
   //DELETE DE LA BD
   $SQL = "DELETE FROM conductores WHERE CURP = '$CURP';";
   EjecutarConsulta($Con, $SQL);
+
+  $affected = mysqli_affected_rows($Con);
+	if($affected > 0){
+		$msg = "Conductor eliminado de forma exitosa";
+		echo "<script type='text/javascript'>alert('$msg');</script>";
+	}elseif($affected == 0){
+		$msg = "No fue posible eliminar el conductor debido a que tiene registros vinculados con este CURP";
+		echo "<script type='text/javascript'>alert('$msg');</script>";
+	}else{
+		$msg = "Verifique que este conductor exista";
+		echo "<script type='text/javascript'>alert('$msg');</script>";
+	}
+
   Desconectar($Con);
 }
 
