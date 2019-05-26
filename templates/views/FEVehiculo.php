@@ -18,7 +18,6 @@ if(isset($_POST['id'])){
   $SQL = "SELECT * FROM vehiculos WHERE IdVehiculo = '$AUX';";
   $resultado=EjecutarConsulta($Con, $SQL);
   $row = mysqli_fetch_array($resultado);
-  print_r($row);
 
   $IdVehiculo = $row[0];
   $Propietario = $row[1];
@@ -40,32 +39,6 @@ if(isset($_POST['id'])){
   $Combustible = $row[17];
   $Origen = $row[18];
 
-  //XML
-  if(!$vehiculos = new SimpleXMLElement('temp/XML/Vehiculos/Baja.xml', null, true)){
-  }else{
-    $nuevo = $vehiculos->addChild('vehiculo');
-    $nuevo->addChild('IdVehiculo',$IdVehiculo);
-    $nuevo->addChild('Propietario',$Propietario);
-    $nuevo->addChild('Placa',$Placa);
-    $nuevo->addChild('Tipo',$Tipo);
-    $nuevo->addChild('Modelo',$Modelo);
-    $nuevo->addChild('Marca',$Marca);
-    $nuevo->addChild('Anio',$Anio);
-    $nuevo->addChild('Uso',$Uso);
-    $nuevo->addChild('Color',$Color);
-    $nuevo->addChild('NumPuertas',$Puertas);
-    $nuevo->addChild('Marca',$Marca);
-    $nuevo->addChild('Transmision',$Transmision);
-    $nuevo->addChild('CapacidadDeCarga',$capCarga);
-    $nuevo->addChild('Serie',$Serie);
-    $nuevo->addChild('NumMotor',$numMotor);
-    $nuevo->addChild('Linea',$Linea);
-    $nuevo->addChild('SubLinea',$Sublinea);
-    $nuevo->addChild('Cilindraje',$Cilindraje);
-    $nuevo->addChild('Combustible',$Combustible);
-    $nuevo->addChild('Origen',$Origen);
-    $vehiculos->asXML('temp/XML/Vehiculos/Baja.xml');
-  }
     //DELETE DE LA BD
   $SQL = "DELETE FROM vehiculos WHERE IdVehiculo = '$AUX';";
   EjecutarConsulta($Con, $SQL);
@@ -73,6 +46,32 @@ if(isset($_POST['id'])){
   $affected = mysqli_affected_rows($Con);
 	if($affected > 0){
 		$msg = "Vehículo eliminado de forma exitosa";
+    //XML
+    if(!$vehiculos = new SimpleXMLElement('temp/XML/Vehiculos/Baja.xml', null, true)){
+    }else{
+      $nuevo = $vehiculos->addChild('vehiculo');
+      $nuevo->addChild('IdVehiculo',$IdVehiculo);
+      $nuevo->addChild('Propietario',$Propietario);
+      $nuevo->addChild('Placa',$Placa);
+      $nuevo->addChild('Tipo',$Tipo);
+      $nuevo->addChild('Modelo',$Modelo);
+      $nuevo->addChild('Marca',$Marca);
+      $nuevo->addChild('Anio',$Anio);
+      $nuevo->addChild('Uso',$Uso);
+      $nuevo->addChild('Color',$Color);
+      $nuevo->addChild('NumPuertas',$Puertas);
+      $nuevo->addChild('Marca',$Marca);
+      $nuevo->addChild('Transmision',$Transmision);
+      $nuevo->addChild('CapacidadDeCarga',$capCarga);
+      $nuevo->addChild('Serie',$Serie);
+      $nuevo->addChild('NumMotor',$numMotor);
+      $nuevo->addChild('Linea',$Linea);
+      $nuevo->addChild('SubLinea',$Sublinea);
+      $nuevo->addChild('Cilindraje',$Cilindraje);
+      $nuevo->addChild('Combustible',$Combustible);
+      $nuevo->addChild('Origen',$Origen);
+      $vehiculos->asXML('temp/XML/Vehiculos/Baja.xml');
+    }
 		echo "<script type='text/javascript'>alert('$msg');</script>";
 	}elseif($affected == 0){
 		$msg = "No fue posible eliminar el vehículo, verifique que este vehículo exista";
