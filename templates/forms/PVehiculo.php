@@ -29,6 +29,30 @@ if(isset($_POST['Submit'])){
 	$affected = mysqli_affected_rows($Con);
 	if($affected > 0){
 		$msg = "Se registró la información del nuevo vehículo correctamente";
+		if(!$vehiculos = new SimpleXMLElement('temp/XML/Vehiculos/Alta.xml', null, true)){
+		}else{
+			$nuevo = $vehiculos->addChild('vehiculo');
+			$nuevo->addChild('Propietario',$Propietario);
+			$nuevo->addChild('Placa',$Placa);
+			$nuevo->addChild('Tipo',$Tipo);
+			$nuevo->addChild('Modelo',$Modelo);
+			$nuevo->addChild('Marca',$Marca);
+			$nuevo->addChild('Anio',$Anio);
+			$nuevo->addChild('Uso',$Uso);
+			$nuevo->addChild('Color',$Color);
+			$nuevo->addChild('NumPuertas',$numPuertas);
+			$nuevo->addChild('Marca',$Marca);
+			$nuevo->addChild('Transmision',$Transmision);
+			$nuevo->addChild('CapacidadDeCarga',$capCarga);
+			$nuevo->addChild('Serie',$Serie);
+			$nuevo->addChild('NumMotor',$numMotor);
+			$nuevo->addChild('Linea',$Linea);
+			$nuevo->addChild('SubLinea',$Sublinea);
+			$nuevo->addChild('Cilindraje',$Cilindraje);
+			$nuevo->addChild('Combustible',$Combustible);
+			$nuevo->addChild('Origen',$Origen); 
+			$vehiculos->asXML('temp/XML/Vehiculos/Alta.xml');
+		}
 		echo "<script type='text/javascript'>alert('$msg');</script>";
 	}elseif($affected == 0){
 		$msg = "No fue posible registrar el vehículo";
@@ -39,31 +63,6 @@ if(isset($_POST['Submit'])){
 	}
 
 	Desconectar($Con);
-
-	if(!$vehiculos = new SimpleXMLElement('temp/XML/Vehiculos/Alta.xml', null, true)){
-	}else{
-		$nuevo = $vehiculos->addChild('vehiculo');
-		$nuevo->addChild('Propietario',$Propietario);
-		$nuevo->addChild('Placa',$Placa);
-		$nuevo->addChild('Tipo',$Tipo);
-		$nuevo->addChild('Modelo',$Modelo);
-		$nuevo->addChild('Marca',$Marca);
-		$nuevo->addChild('Anio',$Anio);
-		$nuevo->addChild('Uso',$Uso);
-		$nuevo->addChild('Color',$Color);
-		$nuevo->addChild('NumPuertas',$numPuertas);
-		$nuevo->addChild('Marca',$Marca);
-		$nuevo->addChild('Transmision',$Transmision);
-		$nuevo->addChild('CapacidadDeCarga',$capCarga);
-		$nuevo->addChild('Serie',$Serie);
-		$nuevo->addChild('NumMotor',$numMotor);
-		$nuevo->addChild('Linea',$Linea);
-		$nuevo->addChild('SubLinea',$Sublinea);
-		$nuevo->addChild('Cilindraje',$Cilindraje);
-		$nuevo->addChild('Combustible',$Combustible);
-		$nuevo->addChild('Origen',$Origen); 
-		$vehiculos->asXML('temp/XML/Vehiculos/Alta.xml');
-	}
 }
 
 ?>

@@ -18,6 +18,7 @@ if(isset($_POST['id'])){
   $SQL = "SELECT * FROM vehiculos WHERE IdVehiculo = '$AUX';";
   $resultado=EjecutarConsulta($Con, $SQL);
   $row = mysqli_fetch_array($resultado);
+  print_r($row);
 
   $IdVehiculo = $row[0];
   $Propietario = $row[1];
@@ -43,6 +44,7 @@ if(isset($_POST['id'])){
   if(!$vehiculos = new SimpleXMLElement('temp/XML/Vehiculos/Baja.xml', null, true)){
   }else{
     $nuevo = $vehiculos->addChild('vehiculo');
+    $nuevo->addChild('IdVehiculo',$IdVehiculo);
     $nuevo->addChild('Propietario',$Propietario);
     $nuevo->addChild('Placa',$Placa);
     $nuevo->addChild('Tipo',$Tipo);
@@ -61,7 +63,7 @@ if(isset($_POST['id'])){
     $nuevo->addChild('SubLinea',$Sublinea);
     $nuevo->addChild('Cilindraje',$Cilindraje);
     $nuevo->addChild('Combustible',$Combustible);
-    $nuevo->addChild('Origen',$Origen); 
+    $nuevo->addChild('Origen',$Origen);
     $vehiculos->asXML('temp/XML/Vehiculos/Baja.xml');
   }
     //DELETE DE LA BD

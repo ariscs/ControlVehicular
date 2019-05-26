@@ -32,7 +32,7 @@ if(isset($_POST['CURP'])){
   $Restricciones = $row[6];
   $TelE = $row[7];  
   $FechaN = $row[8];
-  //XML
+  
   //DELETE DE LA BD
   $SQL = "DELETE FROM conductores WHERE CURP = '$CURP';";
   EjecutarConsulta($Con, $SQL);
@@ -40,6 +40,7 @@ if(isset($_POST['CURP'])){
   $affected = mysqli_affected_rows($Con);
 	if($affected > 0){
 		$msg = "Conductor eliminado de forma exitosa";
+    //XML
     if(!$conductores = new SimpleXMLElement('temp/XML/ConductoresBaja.xml', null, true)){
     }else{
       $nuevo = $conductores->addChild('conductor');
