@@ -1,8 +1,14 @@
 <?php 
-	$Folio=$_POST['Folio'];
-
 	require('fpdf.php');
 	include('../../rcon2.php');
+
+	$Folio = null;
+
+	if(isset($_GET['idAux'])){
+		$Folio = $_GET['idAux'];
+	}else{
+		$Folio=$_POST['Folio'];
+	}
 
 	$Con = Conectar();
 

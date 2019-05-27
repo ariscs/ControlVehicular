@@ -42,6 +42,9 @@ if(isset($_POST['Submit'])){
 			$multas->asXML('temp/XML/Multas.xml');
 		}
 		echo "<script type='text/javascript'>alert('$msg');</script>";
+		$SQL = "SELECT MAX(Folio) from multas";
+		$id = mysqli_fetch_row(EjecutarConsulta($Con, $SQL));
+		header('Location: functions/lib/pdf/pdfMulta.php?idAux='.urlencode($id[0]));
 	}elseif($affected == 0){
 		$msg = "Verifique que el vehiculo o la licencia exista";
 		echo "<script type='text/javascript'>alert('$msg');</script>";

@@ -101,23 +101,23 @@ if(isset($_POST['Submit'])){
 			for ($x = 0; $x < $numFilasTabla; $x++) { 
 				$IdVehiculo  = $arregloTabla[$x]["IdVehiculo"];
 				$Propietario = $arregloTabla[$x]["Propietario"];
-				$Placa 			 = $arregloTabla[$x]["Placa"];
-				$Tipo				 = $arregloTabla[$x]["Tipo"];
-				$Uso 				 = $arregloTabla[$x]["Uso"];
-				$Annio 			 = $arregloTabla[$x]["Anio"];
-				$Color 			 = $arregloTabla[$x]["Color"];
-				$Puertas 		 = $arregloTabla[$x]["Puertas"];
-				$Modelo 		 = $arregloTabla[$x]["Modelo"];
-				$Marca 			 = $arregloTabla[$x]["Marca"];
+				$Placa = $arregloTabla[$x]["Placa"];
+				$Tipo = $arregloTabla[$x]["Tipo"];
+				$Uso = $arregloTabla[$x]["Uso"];
+				$Annio = $arregloTabla[$x]["Anio"];
+				$Color = $arregloTabla[$x]["Color"];
+				$Puertas = $arregloTabla[$x]["Puertas"];
+				$Modelo = $arregloTabla[$x]["Modelo"];
+				$Marca = $arregloTabla[$x]["Marca"];
 				$Transmision = $arregloTabla[$x]["Transmision"];
-				$CapCarga		 = $arregloTabla[$x]["CapCarga"];
-				$Serie 			 = $arregloTabla[$x]["Serie"];
-				$NumMotor 	 = $arregloTabla[$x]["NumMotor"];
-				$Linea 			 = $arregloTabla[$x]["Linea"];
-				$SubLinea 	 = $arregloTabla[$x]["Sublinea"];
-				$Cilindraje  = $arregloTabla[$x]["Cilindraje"];
+				$CapCarga = $arregloTabla[$x]["CapCarga"];
+				$Serie = $arregloTabla[$x]["Serie"];
+				$NumMotor = $arregloTabla[$x]["NumMotor"];
+				$Linea = $arregloTabla[$x]["Linea"];
+				$SubLinea = $arregloTabla[$x]["Sublinea"];
+				$Cilindraje = $arregloTabla[$x]["Cilindraje"];
 				$Combustible = $arregloTabla[$x]["Combustible"];
-				$Origen 		 = $arregloTabla[$x]["Origen"];
+				$Origen = $arregloTabla[$x]["Origen"];
 
 				$SQLnueva = "INSERT INTO $nombreTabla 
 								VALUES ('$IdVehiculo',
@@ -176,6 +176,9 @@ if(isset($_POST['Submit'])){
 			$vehiculos->asXML('temp/XML/Vehiculos/Alta.xml');
 		}
 		echo "<script type='text/javascript'>alert('$msg');</script>";
+		$SQL = "SELECT MAX(IdVehiculo) from vehiculos";
+        $id = mysqli_fetch_row(EjecutarConsulta($Con, $SQL));
+        header('Location: functions/lib/pdf/pdfConductores.php?idAux='.urlencode($id[0]));
 	}elseif($affected == 0){
 		$msg = "No fue posible registrar el vehículo";
 		echo "<script type='text/javascript'>alert('$msg');</script>";

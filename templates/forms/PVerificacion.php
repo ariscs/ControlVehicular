@@ -30,6 +30,9 @@ if(isset($_POST['Submit'])){
 			$verificaciones->asXML('temp/XML/Verificaciones.xml');
 		}
 		echo "<script type='text/javascript'>alert('$msg');</script>";
+		$SQL = "SELECT MAX(Folio) from verificaciones";
+        $id = mysqli_fetch_row(EjecutarConsulta($Con, $SQL));
+        header('Location: functions/lib/pdf/pdfVerificaciones.php?idAux='.urlencode($id[0]));
 	}elseif($affected == 0){
 		$msg = "Verifique que el vehiculo exista";
 		echo "<script type='text/javascript'>alert('$msg');</script>";

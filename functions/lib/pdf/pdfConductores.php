@@ -1,9 +1,15 @@
 <?php
-	$idVehiculo=$_POST['idVehiculo'];
-
 	require('fpdf.php');
 	include('../../rcon2.php');
 	$Con = Conectar();
+
+	$idVehiculo = null;
+
+	if(isset($_GET['idAux'])){
+		$idVehiculo = $_GET['idAux'];
+	}else{
+		$idVehiculo=$_POST['idVehiculo'];
+	}
 
 	$SQL = "SELECT * FROM vehiculos WHERE idVehiculo = '$idVehiculo';";
 
