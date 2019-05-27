@@ -56,8 +56,7 @@
 	//QR
 	include('../qr/phpqrcode.php');
 
-	$dir = '/';
-	$filename = $dir.'qrpdfV.png';
+	$filename = 'qrpdfV.png';
 
 	$size=4;
 	$level='Q';
@@ -65,7 +64,7 @@
 	$contenido='"ID Vehiculo: "'.$idVehiculo.'" Propietario:"'.$Propietario.'" Placa: "'.$Placa.'" Periodo: "'.$Periodo.'" Fecha: "'.$Fecha." Dictamen: ".$Dictamen."''"; //sms:(442)200-0584 mailto:acamachos11@outook.com?subject=Hola Mundo&body=prueba skype:username?call BEGIN:VCARD."\N"
 
 	QRcode::png($contenido, $filename, $level, $size, $frame);
-	$QR = '/qrpdfV.png';
+	$QR = 'qrpdfV.png';
 	//QR
 
 	$pdf = new FPDF();

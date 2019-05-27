@@ -114,7 +114,7 @@ if(isset($_POST['Submit'])){
 				$Serie 			 = $arregloTabla[$x]["Serie"];
 				$NumMotor 	 = $arregloTabla[$x]["NumMotor"];
 				$Linea 			 = $arregloTabla[$x]["Linea"];
-				$SubLinea 	 = $arregloTabla[$x]["SubLinea"];
+				$SubLinea 	 = $arregloTabla[$x]["Sublinea"];
 				$Cilindraje  = $arregloTabla[$x]["Cilindraje"];
 				$Combustible = $arregloTabla[$x]["Combustible"];
 				$Origen 		 = $arregloTabla[$x]["Origen"];

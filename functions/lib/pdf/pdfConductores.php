@@ -37,8 +37,7 @@
 	//QR
 	include('../qr/phpqrcode.php');
 
-	$dir = '/';
-	$filename = $dir.'qrpdf.png';
+	$filename = 'qrpdf.png';
 
 	$size=12;
 	$level='Q';
@@ -190,7 +189,7 @@
 	$pdf->Cell(55,3,'',0,0,'L');
 	$pdf->Cell(10,3,'SECRETARIA DE PLANEACION Y FINANZAS',0,1,'L');
 
-	$pdf->Cell(0,0,$pdf->Image('/qrpdf.png',125,85,20,20),0,1,'L');
+	$pdf->Cell(0,0,$pdf->Image('qrpdf.png',125,85,20,20),0,1,'L');
 
 	$pdf->Cell(40,5,'',0,1,'L',0);
 	$pdf->Cell(40,5,'',0,1,'L',0);
