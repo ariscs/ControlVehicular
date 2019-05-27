@@ -1,10 +1,11 @@
 <div class="form">
   <form id="form1" name="form1" method="post" action="functions/lib/pdf/pdfVerificaciones.php" enctype="multipart/form-data">
-    <label>Folio
-      <input name="Folio" type="number" id="Folio" value="0" maxlength="3" minlength="1" />
-    </label>
-    <label>
-      <input type="submit" name="Submit" value="Submit"/>
-    </label>
+    
+    <div class="form__group">
+      <input name="Folio" type="number" id="Folio" maxlength="3" minlength="1" class="form__input" placeholder="Folio"/>
+      <label class="form__label" for="Folio">Folio</label>
+    </div>
+    
+    <input type="submit" name="Submit" value="Submit"/>
   </form>
 </div>

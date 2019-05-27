@@ -24,9 +24,6 @@ if($_SESSION['val']){
             case "fclicencias":
                 include('templates/views/FCLicencias.php');
                 break;
-            case "felicencias":
-                include('templates/views/FELicencias.php');
-                break;
             case "fpdfLicencias":
                 include('templates/views/fpdfLicencias.html');
                 break;
@@ -76,9 +73,6 @@ if($_SESSION['val']){
             case "fcverificacion":
                 include('templates/views/FCVerificacion.php');
                 break;
-            case "feverificacion":
-                include('templates/views/FEVerificacion.php');
-                break;
             case "fpdfVerificaciones":
                 include('templates/views/fpdfVerificaciones.html');
                 break;
@@ -91,9 +85,6 @@ if($_SESSION['val']){
                 break;
             case "fcmultas":
                 include('templates/views/FCMultas.php');
-                break;
-            case "femultas":
-                include('templates/views/FEMultas.php');
                 break;
             default:
                 break;

@@ -1,10 +1,11 @@
 <div class="form">
   <form id="form1" name="form1" method="post" action="functions/lib/pdf/pdfConductores.php" enctype="multipart/form-data">
-    <label>idVehiculo
-      <input name="idVehiculo" type="number" id="idVehiculo" value="0"/>
-    </label>
-    <label>
-      <input type="submit" name="Submit" value="Submit"/>
-    </label>
+    
+    <div class="form__group">
+      <input name="idVehiculo" type="number" id="idVehiculo" class="form__input" placeholder="ID Vehiculo"/>
+      <label class="form__label" for="idVehiculo">ID Vehiculo</label>
+    </div>
+    
+    <input type="submit" name="Submit" value="Submit"/>
   </form>
 </div>

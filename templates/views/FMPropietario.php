@@ -1,9 +1,8 @@
 <div class="form">
     <form id="form1" name="form1" method="POST" action="#">
-        <p>CONDUCTOR</p>
 
         <div class="form__group">
-            <input type="text" name="RFC" class="form__input" maxlength="13" minlength="13">
+            <input type="text" name="RFC" class="form__input" placeholder="RFC" maxlength="13" minlength="13">
             <label for="RFC" class="form__label">RFC</label>
         </div>
 

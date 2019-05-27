@@ -1,9 +1,8 @@
 <div class="form">
     <form id="form1" name="form1" method="POST" action="#">
-        <p>CONDUCTOR</p>
 
         <div class="form__group">
-            <input type="text" name="CURP" class="form__input" maxlength="18" minlength="18">
+            <input type="text" name="CURP" class="form__input" placeholder="CURP" maxlength="18" minlength="18">
             <label for="CURP" class="form__label">CURP</label>
         </div>
 
@@ -95,8 +94,8 @@ if(isset($_POST['CURP'])){
             <div class="form__group">
                 <select name="Restricciones" id="" class="form__input">
                     <option value="<?php echo($campos['Restricciones']); ?>" slected><?php echo($campos['Restricciones']); ?></option>
-                    <option value="Usa Lentes">Particular</option>
-                    <option value="Niguno">Privado</option>
+                    <option value="Usa Lentes">Usa Lentes</option>
+                    <option value="Niguna">Ninguna</option>
                 </select>
                 <label for="Restricciones" class="form__label">Uso</label>
             </div>
