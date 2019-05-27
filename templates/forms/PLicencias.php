@@ -48,7 +48,11 @@ if(isset($_POST['Submit'])){
         
             $licencias->asXML('temp/XML/Licencias.xml');
         }
-		echo "<script type='text/javascript'>alert('$msg');</script>";
+        echo "<script type='text/javascript'>alert('$msg');</script>";
+        $SQL = "SELECT MAX(IdLicencia) from licencias";
+        $id = mysqli_fetch_row(EjecutarConsulta($Con, $SQL));
+        //echo($id[0]);
+        header('Location: functions/lib/pdf/pdfLicencia.php?idAux='.urlencode($id[0]));
     }elseif($affected == 0){
         $msg = "Verifique que el conductor exista";
 		echo "<script type='text/javascript'>alert('$msg');</script>";

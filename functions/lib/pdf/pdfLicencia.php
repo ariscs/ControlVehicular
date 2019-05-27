@@ -44,8 +44,7 @@
 	//QR
 	include('../qr/phpqrcode.php');
 
-	$dir = '/';
-	$filename = $dir.'qrpdf.png';
+	$filename = 'qrpdf.png';
 
 	$size=12;
 	$level='Q';
