@@ -57,8 +57,13 @@
       <label class="form__label" for="fecha">Fecha de Nacimiento</label>
     </div>
 
-    <input type="checkbox" name="donante" value="1" checked="checked" />
-    <label>Donador</label>
+    <div class="form__group">
+      <select name="donante" id="donante" class="form__input">
+        <option value="1">Si</option>
+        <option value="0">No</option>        
+      </select>
+      <label class="form__label" for="donante">Donador</label>
+    </div>
     
     <input type="submit" name="Submit" value="Registrar" class="sub2 btnAnimation"/>
   </form>

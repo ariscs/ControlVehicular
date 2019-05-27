@@ -127,7 +127,5 @@ if(isset($_POST['CURP'])){
     }
     Desconectar($Con);    
 }
-
 ?>
-
 </div>
