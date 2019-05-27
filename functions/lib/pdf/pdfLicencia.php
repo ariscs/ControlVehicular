@@ -1,9 +1,15 @@
-<?php 
-	$idLicencia=$_POST['idLicencia'];
-
+<?php
+	
 	require('fpdf.php');
 	include('../../rcon2.php');
 	$Con = Conectar();
+	$idLicencia = null;
+
+	if(isset($_GET['idAux'])){
+		$idLicencia = $_GET['idAux'];
+	}else{
+		$idLicencia = $_POST['idLicencia'];
+	}
 
 	$SQL = "SELECT * FROM Licencias WHERE idLicencia = '$idLicencia';";
 
