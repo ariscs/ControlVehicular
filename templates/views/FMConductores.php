@@ -59,6 +59,10 @@ if(isset($_POST['CURP'])){
                 <label for="CURP" class="form__label">CURP</label>
             </div>
             <div class="form__group">
+                <input name="CURP2" disabled class="form__input" value="<?php echo($campos['CURP']); ?>">
+                <label for="CURP2" class="form__label">CURP</label>
+            </div>
+            <div class="form__group">
                 <input type="text" name="Nombre" class="form__input" value="<?php echo($campos['Nombre']); ?>">
                 <label for="Nombre" class="form__label">Nombre</label>
             </div>

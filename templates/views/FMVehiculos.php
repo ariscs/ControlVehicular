@@ -99,6 +99,11 @@ if(isset($_POST['folio'])){
             </div>
 
             <div class="form__group">
+                <input type="number" disabled name="vehiculo2" class="form__input" value="<?php echo($campos['IdVehiculo']); ?>">
+                <label for="vehiculo2" class="form__label">Folio</label>
+            </div>
+
+            <div class="form__group">
                 <input type="text" name="propietario" class="form__input" value="<?php echo($campos['Propietario']); ?>">
                 <label for="propietario" class="form__label">Propietario</label>
             </div>

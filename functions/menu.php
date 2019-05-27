@@ -37,6 +37,9 @@ if($_SESSION['val']){
             case "fcpropietarios":
                 include('templates/views/FCPropietarios.php');
                 break;
+            case "fmpropietario":
+                include('templates/views/FMPropietario.php');
+                break;
             case "fepropietarios":
                 include('templates/views/FEPropietarios.php');
                 break;
