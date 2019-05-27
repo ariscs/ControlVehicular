@@ -15,7 +15,7 @@ if(isset($_POST['Submit'])){
 	move_uploaded_file($tmp_name, $location.$name);
     $location2=$location.$name;
 
-	$Donante= $_POST['donante'];
+	$Donante = $_POST['donante'];
 	$GrupoS= $_POST['grupo'];
 	$Restricciones= $_POST['restricciones'];
 	$TelE= $_POST['tel'];
