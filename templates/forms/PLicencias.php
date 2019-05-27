@@ -3,13 +3,11 @@
 include('functions/rcon.php');
 if(isset($_POST['Submit'])){
     $Conductor= $_POST['conductor'];
-    $fExpedicion= $_POST['fExpedicion'];
     $Tipo= $_POST['tipo'];
     $fVencimiento= $_POST['fVencimiento'];
     $Lugar= $_POST['lugar'];
     $Expide= $_POST['expide'];
     $Foto= $_FILES['Foto'];
-    // print_r($Foto);
 
     $Foto['name']=$Conductor . ".png";
     
@@ -20,27 +18,46 @@ if(isset($_POST['Submit'])){
     move_uploaded_file($tmp_name, $location.$name);
 
     $location2=$location.$name;
-    print($location2);
+
+    $hoy = date('Y-m-d');
+    $v = null;
+    if($fVencimiento == 3){
+        $v = date('Y-m-d', strtotime('+3 years'));
+    }else{
+        $v = date('Y-m-d', strtotime('+5 years'));
+    }
 
     $Con = Conectar();
     $SQL = "INSERT INTO licencias(Conductor, Expedicion, Tipo, Vencimiento, Lugar, Expide, Foto) 
-        VALUES ('$Conductor', '$fExpedicion', '$Tipo', '$fVencimiento', '$Lugar', '$Expide','$location2')";
+        VALUES ('$Conductor', '$hoy', '$Tipo', '$v', '$Lugar', '$Expide','$location2')";
     EjecutarConsulta($Con,$SQL);
-    Desconectar($Con);
 
-    if(!$licencias = new SimpleXMLElement('temp/XML/Licencias.xml', null, true)){
+    $affected = mysqli_affected_rows($Con);
+	if($affected > 0){
+        $msg = "La licencia fue registrada correctamente";
+        if(!$licencias = new SimpleXMLElement('temp/XML/Licencias.xml', null, true)){
+        }else{
+            $nuevo = $licencias->addChild('Licencia');
+            $nuevo->addChild('Conductor',$Conductor);
+            $nuevo->addChild('Expedicion',$hoy);
+            $nuevo->addChild('Tipo',$Tipo);
+            $nuevo->addChild('Vencimiento',$v);
+            $nuevo->addChild('Lugar',$Lugar);
+            $nuevo->addChild('Expide',$Expide);
+            $nuevo->addChild('Foto',$location2);
+        
+            $licencias->asXML('temp/XML/Licencias.xml');
+        }
+		echo "<script type='text/javascript'>alert('$msg');</script>";
+    }elseif($affected == 0){
+        $msg = "Verifique que el conductor exista";
+		echo "<script type='text/javascript'>alert('$msg');</script>";
     }else{
-        $nuevo = $licencias->addChild('Licencia');
-        $nuevo->addChild('Conductor',$Conductor);
-        $nuevo->addChild('Expedicion',$fExpedicion);
-        $nuevo->addChild('Tipo',$Tipo);
-        $nuevo->addChild('Vencimiento',$fVencimiento);
-        $nuevo->addChild('Lugar',$Lugar);
-        $nuevo->addChild('Expide',$Expide);
-        $nuevo->addChild('Foto',$location2);
-    
-        $licencias->asXML('temp/XML/Licencias.xml');
+        $msg = "No fue posible registrar esta licencia, verifique que el conductor exista";
+		echo "<script type='text/javascript'>alert('$msg');</script>";
     }
+
+    Desconectar($Con);
 }
 
 ?>

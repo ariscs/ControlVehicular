@@ -7,7 +7,7 @@ if(isset($_POST['Submit'])){
 	$IDOficial= $_POST['idOficial'];
 	$Monto= $_POST['monto'];
 	$Lugar= $_POST['lugar'];
-	$Fecha= $_POST['fecha'];
+	$Fecha= date('Y-m-d');
 	$Motivo= $_POST['motivo'];
 
     $Con = Conectar();
@@ -21,24 +21,35 @@ if(isset($_POST['Submit'])){
 
 	$Folio = $Fila[0];
 	$Hora = $Fila[6];
-
 	$Hora = explode(" ", $Hora);
-	$Hora = $Hora[1];
+	$H = $Hora[1];
 
-    if(!$multas = new SimpleXMLElement('temp/XML/Multas.xml', null, true)){
+	$affected = mysqli_affected_rows($Con);
+	if($affected > 0){
+		$msg = "Multa generada exitosamente";
+		if(!$multas = new SimpleXMLElement('temp/XML/Multas.xml', null, true)){
+		}else{
+			$nuevo = $multas->addChild('multa');
+			$nuevo->addChild('Folio',$Folio);
+			$nuevo->addChild('Licencia',$Licencia);
+			$nuevo->addChild('Vehiculo',$Vehiculo);
+			$nuevo->addChild('IdOficial',$IDOficial);
+			$nuevo->addChild('Monto',$Monto);
+			$nuevo->addChild('Lugar',$Lugar);
+			$nuevo->addChild('Fecha',$Fecha);
+			$nuevo->addChild('Motivo',$Motivo);
+			$nuevo->addChild('Hora',$H);
+			$multas->asXML('temp/XML/Multas.xml');
+		}
+		echo "<script type='text/javascript'>alert('$msg');</script>";
+	}elseif($affected == 0){
+		$msg = "Verifique que el vehiculo o la licencia exista";
+		echo "<script type='text/javascript'>alert('$msg');</script>";
 	}else{
-		$nuevo = $multas->addChild('multa');
-		$nuevo->addChild('Folio',$Folio);
-		$nuevo->addChild('Licencia',$Licencia);
-		$nuevo->addChild('Vehiculo',$Vehiculo);
-		$nuevo->addChild('IdOficial',$IDOficial);
-		$nuevo->addChild('Monto',$Monto);
-		$nuevo->addChild('Lugar',$Lugar);
-		$nuevo->addChild('Fecha',$Fecha);
-		$nuevo->addChild('Motivo',$Motivo);
-		$nuevo->addChild('Hora',$Hora);
-		$multas->asXML('temp/XML/Multas.xml');
+		$msg = "Verifique que los datos sean correctos";
+		echo "<script type='text/javascript'>alert('$msg');</script>";
 	}
+
 	Desconectar($Con);
 }
 
