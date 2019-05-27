@@ -55,16 +55,6 @@ if($_SESSION['val']){
                 break;
             case "fpdfConductores":
                 include('templates/views/fpdfConductores.html');
-                break;                
-            case "ftenencia":
-                require_once('templates/forms/PTenencia.php');
-                include('templates/views/FTenencia.html');
-                break;
-            case "fctenencia":
-                include('templates/views/FCTenencias.php');
-                break;
-            case "fetenencia":
-                include('templates/views/FETenencia.php');
                 break;
             case "fverificacion":
                 require_once('templates/forms/PVerificacion.php');
