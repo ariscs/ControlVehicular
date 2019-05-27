@@ -75,7 +75,7 @@ if(isset($_POST['Submit'])){
 			// $nombreTabla = "vehiculos";
 
 			// generamos una nueva conexion a la BD donde se respaldara la informacion
-			$dsnNuevo  	   = "RespaldoVehiculos";
+			$dsnNuevo  	   = "test";
 			$userNuevo 	   = "";
 			$passNueva 	   = "";
 			$conexionNueva = odbc_connect($dsnNuevo, $userNuevo, $passNueva);
