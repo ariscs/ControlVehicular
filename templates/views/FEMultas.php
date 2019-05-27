@@ -5,7 +5,7 @@
   </label>
   <p>
     <label>
-    <input type="submit" name="Submit" value="Eliminar" />
+    <input type="submit" name="Submit" value="Eliminar" class="sub2 btnAnimation"/>
     </label>
   </p>
 </form>

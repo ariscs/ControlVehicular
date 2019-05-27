@@ -1,11 +1,16 @@
 <div class="form">
+
+  <header class="head">
+    <h1>Baja de vehículos</h1>
+  </header>
+  
   <form id="form1" name="form1" method="post" action="#">
     <div class="form__group">
       <input name="id" type="number" id="id" class="form__input" placeholder="ID Vehículo"/>  
       <label for="id" class="form__label">ID Vehículo</label>
     </div>
   
-    <input type="submit" name="Submit" value="Eliminar" />
+    <input type="submit" name="Submit" value="Eliminar" class="sub2 btnAnimation"/>
   </form>
 </div>
 

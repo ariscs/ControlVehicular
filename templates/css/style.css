@@ -148,10 +148,6 @@ body {
     align-items: center;
 }
 
-.update{
-    /* display: none; */
-}
-
 .back{
     height: 100vh;
     width: 100vw;
@@ -263,4 +259,49 @@ body {
     font-weight: bold;
     padding: 1.5rem 2rem;
     text-align: center;
+}
+
+.sub2{
+    border: none;
+    display: block;
+    font-size: 1.6rem;
+    cursor: pointer;
+    background-color: #097AFF;
+    color: white;
+    font-weight: bold;
+    padding: 1.5rem 2rem;
+    text-align: center;
+}
+
+.consulta {
+    border: solid 1px #DDEEEE;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 1.4rem;
+    width: 90%;
+}
+.consulta thead th {
+    background-color: #097AFF;
+    border: solid 1px #DDEEEE;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+}
+.consulta tbody tr th {
+    border: solid 1px #DDEEEE;
+    color: #333;
+    padding: 10px;
+    text-shadow: 1px 1px 1px #fff;
+    text-align: left;
+}
+
+.head{
+    width: 100%;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.head h1{
+    font-size: 3rem;
 }

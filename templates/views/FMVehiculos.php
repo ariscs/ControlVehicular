@@ -1,4 +1,9 @@
 <div class="form">
+
+    <header class="head">
+        <h1>Cambios a vehículo</h1>
+    </header>
+
     <form id="form1" name="form1" method="POST" action="#">
         <p>VEHICULOS</p>
 
@@ -7,7 +12,7 @@
             <label for="folio" class="form__label">Folio</label>
         </div>
 
-        <input type="submit" name="Submit" value="Buscar" />
+        <input type="submit" name="Submit" value="Buscar" class="sub2 btnAnimation"/>
     </form>
 
 
@@ -213,7 +218,7 @@ if(isset($_POST['folio'])){
                 <label for="origen" class="form__label">Origen</label>
             </div>
 
-            <input type="submit" value="Actualizar" name="SubmitUpdate">
+            <input type="submit" value="Actualizar" name="SubmitUpdate" class="sub2 btnAnimation"/>
         </form>
         </div>
 

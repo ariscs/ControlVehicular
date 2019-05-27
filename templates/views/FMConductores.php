@@ -1,4 +1,9 @@
 <div class="form">
+
+    <header class="head">
+        <h1>Cambios a conductor</h1>
+    </header>
+
     <form id="form1" name="form1" method="POST" action="#">
 
         <div class="form__group">
@@ -6,7 +11,7 @@
             <label for="CURP" class="form__label">CURP</label>
         </div>
 
-        <input type="submit" name="Submit" value="Buscar" />
+        <input type="submit" name="Submit" value="Buscar" class="sub2 btnAnimation"/>
     </form>
 
 
@@ -110,7 +115,7 @@ if(isset($_POST['CURP'])){
                 <label for="FechaNac" class="form__label">Fecha de Nacimiento</label>
             </div>
 
-            <input type="submit" value="Actualizar" name="SubmitUpdate">
+            <input type="submit" value="Actualizar" name="SubmitUpdate" class="sub2 btnAnimation"/>
         </form>
         </div>
 
