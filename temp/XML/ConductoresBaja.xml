@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <conductores>
 	
-<conductor><CURP/><nombre/><domicilio/><firma/><donador/><gpoSanguineo/><restriccion/><telEmergencia/><fechaNacimiento/></conductor><conductor><CURP>567436746357564694</CURP><nombre>Aris</nombre><domicilio>El Refugio</domicilio><firma>C:/xampp/htdocs/DAAD267785/DAAD267785Z/Archivos/567436746357564694</firma><donador>1</donador><gpoSanguineo>B+</gpoSanguineo><restriccion>Ninguna</restriccion><telEmergencia>4423590211</telEmergencia><fechaNacimiento>2019-04-28</fechaNacimiento></conductor></conductores>
+</conductores>

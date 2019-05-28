@@ -183,7 +183,7 @@ if(isset($_POST['Submit'])){
 		$msg = "No fue posible registrar el vehículo";
 		echo "<script type='text/javascript'>alert('$msg');</script>";
 	}else{
-		$msg = "Verifique que el propietario exista";
+		$msg = "Verifique que el propietario exista Y que la placa no este repetida";
 		echo "<script type='text/javascript'>alert('$msg');</script>";
 	}
 
