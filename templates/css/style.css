@@ -141,9 +141,11 @@ body {
 }
 
 #form1{
-    width: 70%;
+    width: 80%;
+    height: 80vh;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
@@ -196,6 +198,7 @@ body {
     display: block;
     transition: all .3s;
     background-color: whitesmoke;
+    box-shadow: 0 0.6rem 2rem rgba(0, 0, 0, 0.2);
 }
 
 .form__input:focus {
