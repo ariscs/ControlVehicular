@@ -28,6 +28,22 @@ if(isset($_POST['Submit'])){
 	$affected = mysqli_affected_rows($Con);
 	if($affected > 0){
 		$msg = "Se registró la información del nuevo conductor correctamente";
+		//XML
+		if(!$conductores = new SimpleXMLElement('temp/XML/Conductores.xml', null, true)){
+		}else{
+			$nuevo = $conductores->addChild('conductor');
+			$nuevo->addChild('CURP',$CURP);
+			$nuevo->addChild('nombre',$Nombre);
+			$nuevo->addChild('domicilio',$Domicilio);
+			$nuevo->addChild('firma',$location2);
+			$nuevo->addChild('donador',$Donante);
+			$nuevo->addChild('gpoSanguineo',$GrupoS);
+			$nuevo->addChild('restriccion',$Restricciones);
+			$nuevo->addChild('telEmergencia',$TelE);
+			$nuevo->addChild('fechaNacimiento',$FechaN);
+		
+			$conductores->asXML('temp/XML/Conductores.xml');
+		}
 		echo "<script type='text/javascript'>alert('$msg');</script>";
 	}elseif($affected == 0){
 		$msg = "No fue posible registrar el conductor";
@@ -38,23 +54,6 @@ if(isset($_POST['Submit'])){
 	}
 
 	Desconectar($Con);
-	
-	//XML
-	if(!$conductores = new SimpleXMLElement('temp/XML/Conductores.xml', null, true)){
-	}else{
-		$nuevo = $conductores->addChild('conductor');
-		$nuevo->addChild('CURP',$CURP);
-		$nuevo->addChild('nombre',$Nombre);
-		$nuevo->addChild('domicilio',$Domicilio);
-		$nuevo->addChild('firma',$location2);
-		$nuevo->addChild('donador',$Donante);
-		$nuevo->addChild('gpoSanguineo',$GrupoS);
-		$nuevo->addChild('restriccion',$Restricciones);
-		$nuevo->addChild('telEmergencia',$TelE);
-		$nuevo->addChild('fechaNacimiento',$FechaN);
-	
-		$conductores->asXML('temp/XML/Conductores.xml');
-	}
 }
 
 ?>

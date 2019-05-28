@@ -56,7 +56,7 @@ if(isset($_POST['Submit'])){
         $msg = "Verifique que el conductor exista";
 		echo "<script type='text/javascript'>alert('$msg');</script>";
     }else{
-        $msg = "No fue posible registrar esta licencia, verifique que el conductor exista";
+        $msg = "No fue posible registrar esta licencia, verifique que el conductor exista o que no tenga ya una licencia";
 		echo "<script type='text/javascript'>alert('$msg');</script>";
     }
 

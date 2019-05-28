@@ -84,7 +84,7 @@
 	$pdf->Cell(52, 4, $Name[0], 0, 2, 'R');
 	$pdf->Cell(52, 4, $Name[1], 0, 2, 'R');
 	$pdf->SetFont('Arial', 'B', 9);
-	$pdf->Cell(52, 4, $Name[0], 0, 2, 'R');
+	$pdf->Cell(52, 4, $Name[2], 0, 2, 'R');
 	$pdf->SetFont('Arial', '', 4);
 	$pdf->Cell(52, 2, 'Observaciones', 0, 2, 'R');
 
