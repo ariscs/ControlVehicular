@@ -6,7 +6,7 @@
   
   <form id="form1" name="form1" method="post" action="#">
     <div class="form__group">
-      <input name="id" type="number" id="id" class="form__input" placeholder="ID Vehículo"/>  
+      <input name="id" type="number" id="id" class="form__input" placeholder="ID Vehículo" min="1"/>  
       <label for="id" class="form__label">ID Vehículo</label>
     </div>
   

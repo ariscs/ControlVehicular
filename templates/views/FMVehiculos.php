@@ -5,10 +5,10 @@
     </header>
 
     <form id="form1" name="form1" method="POST" action="#">
-        <p>VEHICULOS</p>
+        <!-- <p>VEHICULOS</p> -->
 
         <div class="form__group">
-            <input type="number" name="folio" class="form__input">
+            <input type="number" name="folio" class="form__input" min="0">
             <label for="folio" class="form__label">Folio</label>
         </div>
 
@@ -221,12 +221,12 @@ if(isset($_POST['folio'])){
 
         <div class="update">
         <form id="form2" name="form2" method="POST" action="#">
-            <div class="form__group" style="display: none;">
+            <div class="form__group"  style="display: none !important;">
                 <input type="number" name="vehiculo" class="form__input" value="<?php echo($campos['IdVehiculo']); ?>">
                 <label for="vehiculo" class="form__label">Folio</label>
             </div>
 
-            <div class="form__group">
+            <div class="form__group" style="display: none !important;">
                 <input type="number" disabled name="vehiculo2" class="form__input" value="<?php echo($campos['IdVehiculo']); ?>">
                 <label for="vehiculo2" class="form__label">Folio</label>
             </div>

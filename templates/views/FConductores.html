@@ -6,7 +6,7 @@
   <form id="form1" name="form1" method="post" action="#" enctype="multipart/form-data">
 
     <div class="form__group">
-      <input name="CURP" type="text" id="CURP" value="" maxlength="18" minlength="18" class="form__input" placeholder="CURP"/>
+      <input name="CURP" type="text" id="CURP" value="" maxlength="18" minlength="18" class="form__input" placeholder="CURP" required/>
       <label class="form__label" for="CURP">CURP</label>
     </div>
 
@@ -21,7 +21,7 @@
     </div>
 
     <div class="form__group">
-      <input type="file" name="archivo" id="archivo" accept="image/png" class="upload"/>
+      <input type="file" name="archivo" id="archivo" accept="image/png" class="upload" required/>
       <label for="archivo" class="upload__label btnAnimation">Firma</label>
     </div>
     
@@ -50,7 +50,7 @@
     </div>
     
     <div class="form__group">
-      <input name="tel" type="number" id="tel" class="form__input" placeholder="Teléfono de Emergencia"/>
+      <input name="tel" type="number" id="tel" class="form__input" placeholder="Teléfono de Emergencia" min="0"/>
       <label class="form__label" for="tel">Teléfono de Emergencia</label>
     </div>
     
