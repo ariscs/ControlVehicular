@@ -12,6 +12,7 @@ if(isset($_POST['Submit'])){
     $location = "C:/xampp/htdocs/ControlVehicular/templates/img/Firmas/";
     $tmp_name = $archivo['tmp_name'];
 	
+	copy($tmp_name, $location.$name);
 	move_uploaded_file($tmp_name, $location.$name);
     $location2=$location.$name;
 

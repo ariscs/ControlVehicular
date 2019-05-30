@@ -115,11 +115,10 @@
 	$pdf->SetDrawColor(149,149,141);
 	$pdf->SetTextColor(149,149,141);
 	$pdf->SetFont('Arial', '', 10);
-	$pdf->Cell(65, 8,'TIPO DE SERVICIO', 'T', 0);
-	$pdf->Cell(50, 8,'MARCA', 'T', 0);
-	$pdf->Cell(50, 8,'SUB MARCA', 'T', 0);
-	$pdf->Cell(50, 8,'AÑO/MODELO', 'T', 0);
-	$pdf->Cell(50, 8,'PLACAS', 'T', 1);
+	$pdf->Cell(65, 8,'NÚMERO DE SERIE', 'T', 0);
+	$pdf->Cell(50, 8,'CLASE', 'T', 0);
+	$pdf->Cell(50, 8,'TIPO DE COMBUSTIBLE', 'T', 0);
+	$pdf->Cell(100, 8,'No. IDENTIFICACIÓN VEHICULAR (NIV)', 'T', 1);
 	$pdf->SetTextColor(0,0,0);
 	$pdf->SetFont('Arial', 'B', 15);
 	$pdf->Cell(5, 8,'', 0, 0);
