@@ -21,26 +21,28 @@ if($n == 0){
 	$fila = mysqli_fetch_row($Query);
 	if($fila[2] == 1){
 		if($fila[1] == $psw){
-			$string="";
-			$data = fopen($ubicacionK,"r");
-			while(!feof($data)){
-				$s1 = fgets($data);
-				$string = $string.$s1;
-			}
-			if ($fila[4]==$string) {
-				//Entra correctamente
-				$SQL = "UPDATE usuarios SET Intento = 0 WHERE Username = '$user'";
-				EjecutarConsulta($Con, $SQL);
-				$_SESSION['username'] = $user;
-				$_SESSION['val'] = TRUE;
-				$_SESSION['time'] = time();
-				header("Location:../index.php?view=".urlencode("menu"));
+			if($ubicacionK != null){
+				$string="";
+				$data = fopen($ubicacionK,"r");
+				while(!feof($data)){
+					$s1 = fgets($data);
+					$string = $string.$s1;
+				}
+				if ($fila[4]==$string) {
+					//Entra correctamente
+					$SQL = "UPDATE usuarios SET Intento = 0 WHERE Username = '$user'";
+					EjecutarConsulta($Con, $SQL);
+					$_SESSION['username'] = $user;
+					$_SESSION['val'] = TRUE;
+					$_SESSION['time'] = time();
+					header("Location:../index.php?view=".urlencode("menu"));
+				}else{
+					header("Location:../index.php?view=".urlencode("login"));
+				}
+				fclose($data);
 			}else{
 				header("Location:../index.php?view=".urlencode("login"));
 			}
-			fclose($data);
-			
-
 		}else{
 			//Contrasena incorrecta
 			$i = $fila[3]+1;
